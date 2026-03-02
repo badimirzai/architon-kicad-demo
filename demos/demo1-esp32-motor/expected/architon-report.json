@@ -1,0 +1,120 @@
+{
+  "report_version": "0",
+  "summary": {
+    "source": "kicad_bom_csv",
+    "input_file": "bom.csv",
+    "parts": 7,
+    "rules": 0,
+    "has_failures": false,
+    "delimiter": ",",
+    "parse_errors_count": 0,
+    "parse_warnings_count": 2,
+    "parse_errors": [],
+    "parse_warnings": [
+      "row 2 (ref=C1): missing recommended field footprint (column=Footprint)",
+      "row 3 (ref=R1): missing recommended field footprint (column=Footprint)"
+    ]
+  },
+  "design_ir": {
+    "version": "0",
+    "source": "kicad_bom_csv",
+    "parts": [
+      {
+        "ref": "C1",
+        "value": "100nF",
+        "footprint": "",
+        "fields": {
+          "Datasheet": "~",
+          "Description": "Unpolarized capacitor",
+          "Footprint": "",
+          "Qty": "1",
+          "Reference": "C1",
+          "Value": "100nF"
+        }
+      },
+      {
+        "ref": "R1",
+        "value": "10k",
+        "footprint": "",
+        "fields": {
+          "Datasheet": "~",
+          "Description": "Resistor",
+          "Footprint": "",
+          "Qty": "1",
+          "Reference": "R1",
+          "Value": "10k"
+        }
+      },
+      {
+        "ref": "U2",
+        "value": "TB6612FNG",
+        "footprint": "Package_SO:SSOP-24_5.3x8.2mm_P0.65mm",
+        "fields": {
+          "Datasheet": "https://toshiba.semicon-storage.com/us/product/linear/motordriver/detail.TB6612FNG.html",
+          "Description": "Driver IC for Dual DC motor",
+          "Footprint": "Package_SO:SSOP-24_5.3x8.2mm_P0.65mm",
+          "Qty": "1",
+          "Reference": "U2",
+          "Value": "TB6612FNG"
+        }
+      },
+      {
+        "ref": "M1",
+        "value": "3",
+        "footprint": "3V",
+        "fields": {
+          "Datasheet": "",
+          "Description": "~",
+          "Footprint": "3V",
+          "Qty": "1",
+          "Reference": "M1",
+          "Value": "3"
+        }
+      },
+      {
+        "ref": "U1",
+        "value": "ESP32-C3-WROOM-02",
+        "footprint": "RF_Module:ESP32-C3-WROOM-02",
+        "fields": {
+          "Datasheet": "https://www.espressif.com/sites/default/files/documentation/esp32-c3-wroom-02_datasheet_en.pdf",
+          "Description": "802.11 b/g/n Wi­Fi and Bluetooth 5 module",
+          "Footprint": "RF_Module:ESP32-C3-WROOM-02",
+          "Qty": "1",
+          "Reference": "U1",
+          "Value": "ESP32-C3-WROOM-02"
+        }
+      },
+      {
+        "ref": "U3",
+        "value": "TPS70245_HTSSOP20",
+        "footprint": "Package_SO:HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP3.4x6.5mm_ThermalVias",
+        "fields": {
+          "Datasheet": "http://www.ti.com/lit/ds/symlink/tps702.pdf",
+          "Description": "3.3V 500mA/1.2V 250mA Dual Low Drop-out Regulator with Voltage Supervisor",
+          "Footprint": "Package_SO:HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP3.4x6.5mm_ThermalVias",
+          "Qty": "1",
+          "Reference": "U3",
+          "Value": "TPS70245_HTSSOP20"
+        }
+      },
+      {
+        "ref": "J1",
+        "value": "CUI_PD-30",
+        "footprint": "Connector:CUI_PD-30",
+        "fields": {
+          "Datasheet": "http://www.cui.com/product/resource/pd-30.pdf",
+          "Description": "3 pin connector",
+          "Footprint": "Connector:CUI_PD-30",
+          "Qty": "1",
+          "Reference": "J1",
+          "Value": "CUI_PD-30"
+        }
+      }
+    ],
+    "metadata": {
+      "input_file": "bom.csv",
+      "parsed_at": "2026-03-02T21:37:14Z"
+    }
+  },
+  "rules": []
+}
