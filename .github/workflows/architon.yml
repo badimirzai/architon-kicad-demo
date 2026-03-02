@@ -23,10 +23,12 @@ jobs:
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
           which rv
           rv version
+          
       - name: Run rv scan
         run: |
           set -euo pipefail
-          rv scan demos/demo1-esp32-motor/bom/bom.csv --out .architon/architon-report.json
+          mkdir -p .architon
+          RV_DEBUG=1 rv scan demos/demo1-esp32-motor/bom/bom.csv --out .architon/architon-report.json
           
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
