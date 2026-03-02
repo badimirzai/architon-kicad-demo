@@ -19,14 +19,15 @@ jobs:
       - name: Install Architon CLI
         run: |
           set -euo pipefail
-          go install github.com/badimirzai/architon-cli@latest
+          go install github.com/badimirzai/architon-cli/cmd/rv@latest
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
-
+          which rv
+          rv version
       - name: Run rv scan
         run: |
           set -euo pipefail
           rv scan demos/demo1-esp32-motor/bom/bom.csv --out .architon/architon-report.json
-
+          
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
         with:
