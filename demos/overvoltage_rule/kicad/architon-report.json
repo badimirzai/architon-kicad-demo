@@ -1,0 +1,235 @@
+{
+  "report_version": "0",
+  "summary": {
+    "source": "kicad_netlist_sexpr",
+    "source_importer": "kicad",
+    "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1990347366.net",
+    "parts": 3,
+    "pins": 7,
+    "rules": 0,
+    "has_failures": false,
+    "parse_errors_count": 0,
+    "parse_warnings_count": 0,
+    "parse_errors": [],
+    "parse_warnings": [],
+    "nets": 3
+  },
+  "design_ir": {
+    "version": "0",
+    "source": "kicad_netlist_sexpr",
+    "source_info": {
+      "importer": "kicad",
+      "format": "netlist_sexpr",
+      "input": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1990347366.net",
+      "imported": "2026-05-04T16:41:40Z"
+    },
+    "parts": [
+      {
+        "ref": "J1",
+        "value": "VBAT",
+        "footprint": ""
+      },
+      {
+        "ref": "U1",
+        "value": "Conn_01x02",
+        "footprint": ""
+      },
+      {
+        "ref": "U2",
+        "value": "Conn_01x03",
+        "footprint": ""
+      }
+    ],
+    "pins": [
+      {
+        "ref": "J1",
+        "pin": "1",
+        "name": "Pin_1"
+      },
+      {
+        "ref": "J1",
+        "pin": "2",
+        "name": "Pin_2"
+      },
+      {
+        "ref": "U1",
+        "pin": "1",
+        "name": "Pin_1"
+      },
+      {
+        "ref": "U1",
+        "pin": "2",
+        "name": "Pin_2"
+      },
+      {
+        "ref": "U2",
+        "pin": "1",
+        "name": "Pin_1"
+      },
+      {
+        "ref": "U2",
+        "pin": "2",
+        "name": "Pin_2"
+      },
+      {
+        "ref": "U2",
+        "pin": "3",
+        "name": "Pin_3"
+      }
+    ],
+    "nets": [
+      {
+        "name": "/+5V",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "1"
+          },
+          {
+            "ref": "U2",
+            "pin": "3"
+          }
+        ]
+      },
+      {
+        "name": "/GND",
+        "pins": [
+          {
+            "ref": "J1",
+            "pin": "2"
+          },
+          {
+            "ref": "U1",
+            "pin": "2"
+          },
+          {
+            "ref": "U2",
+            "pin": "2"
+          }
+        ]
+      },
+      {
+        "name": "/VBAT",
+        "pins": [
+          {
+            "ref": "J1",
+            "pin": "1"
+          },
+          {
+            "ref": "U2",
+            "pin": "1"
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1990347366.net",
+      "parsed_at": "2026-05-04T16:41:40Z"
+    }
+  },
+  "rules": [],
+  "findings": [],
+  "contract_coverage": {
+    "components_total": 3,
+    "components_with_contracts": 0,
+    "pins_total": 7,
+    "pins_with_contracts": 0,
+    "nets_total": 3,
+    "nets_with_contracts": 1,
+    "missing_warnings": [
+      "Missing contract data for U1 pin 1 on powered net /+5V",
+      "Missing contract data for U2 pin 3 on powered net /+5V"
+    ],
+    "parts_total": 3,
+    "unknown_power_critical": [
+      "U1",
+      "U2"
+    ]
+  },
+  "derived": {
+    "net_voltages": [
+      {
+        "net": "/+5V",
+        "voltage": 5,
+        "source": "initial"
+      }
+    ],
+    "inferred_net_voltages": [
+      {
+        "net": "/+5V",
+        "voltage": 5,
+        "source": "net_name",
+        "confidence": "HIGH",
+        "reason": "matched exact voltage pattern \"/+5V\""
+      },
+      {
+        "net": "/GND",
+        "voltage": 0,
+        "source": "net_name",
+        "confidence": "HIGH",
+        "reason": "matched ground net \"/GND\""
+      }
+    ],
+    "unknown_voltage_nets": [
+      {
+        "net": "/VBAT",
+        "reason": "ambiguous power net name"
+      }
+    ],
+    "rail_inferences": [
+      {
+        "net_name": "/+5V",
+        "voltage": 5,
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/+5V\"",
+        "evidence": [
+          "matched exact voltage pattern \"/+5V\""
+        ],
+        "warnings": []
+      },
+      {
+        "net_name": "/GND",
+        "voltage": 0,
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched ground net \"/GND\"",
+        "evidence": [
+          "matched ground net \"/GND\""
+        ],
+        "warnings": []
+      },
+      {
+        "net_name": "/VBAT",
+        "voltage": null,
+        "source": "UNKNOWN",
+        "confidence_score": 0,
+        "confidence_level": "UNKNOWN",
+        "reason": "no voltage evidence found in net name \"/VBAT\"",
+        "evidence": [],
+        "warnings": [
+          "no voltage evidence found in net name \"/VBAT\""
+        ]
+      }
+    ],
+    "rail_coverage": {
+      "total_nets": 3,
+      "rails_with_voltage": 2,
+      "rails_unknown": 1,
+      "high_confidence": 2,
+      "medium_confidence": 0,
+      "low_confidence": 0,
+      "unknown_confidence": 1,
+      "coverage_ratio": 0.6667,
+      "high_confidence_ratio": 0.6667,
+      "usable_for_rules_ratio": 0.6667,
+      "overall_level": "LOW",
+      "warnings": [
+        "some rails have unknown voltage and cannot be checked by voltage rules",
+        "rail voltage coverage is incomplete; voltage checks may miss issues"
+      ]
+    }
+  }
+}

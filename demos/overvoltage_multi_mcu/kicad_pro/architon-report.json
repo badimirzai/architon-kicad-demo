@@ -1,0 +1,2038 @@
+{
+  "report_version": "1",
+  "summary": {
+    "source": "kicad_netlist_sexpr",
+    "source_importer": "kicad",
+    "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1076836766.net",
+    "parts": 5,
+    "pins": 114,
+    "rules": 4,
+    "has_failures": true,
+    "parse_errors_count": 0,
+    "parse_warnings_count": 0,
+    "parse_errors": [],
+    "parse_warnings": [],
+    "nets": 88,
+    "parts_matched": 4,
+    "contracts_applied": 11,
+    "contract_coverage_percentage": 80,
+    "unknown_power_critical_refs": [
+      "U3"
+    ],
+    "enabled_contract_rules": [
+      "supply_abs_max",
+      "supply_recommended_range",
+      "gpio_abs_max",
+      "motor_driver_vm_range",
+      "regulator_output_current"
+    ]
+  },
+  "design_ir": {
+    "version": "0",
+    "source": "kicad_netlist_sexpr",
+    "source_info": {
+      "importer": "kicad",
+      "format": "netlist_sexpr",
+      "input": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1076836766.net",
+      "imported": "2026-05-05T15:14:53Z"
+    },
+    "parts": [
+      {
+        "ref": "U1",
+        "value": "ESP32-WROOM-32",
+        "footprint": "RF_Module:ESP32-WROOM-32",
+        "fields": {
+          "Datasheet": "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf",
+          "Description": "RF Module, ESP32-D0WDQ6 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, onboard antenna, SMD",
+          "Footprint": "RF_Module:ESP32-WROOM-32",
+          "Sheetfile": "kicad_pro.kicad_sch",
+          "Sheetname": "",
+          "ki_fp_filters": "ESP32?WROOM?32*",
+          "ki_keywords": "RF Radio BT ESP ESP32 Espressif onboard PCB antenna"
+        }
+      },
+      {
+        "ref": "U2",
+        "value": "TB6612FNG",
+        "footprint": "Package_SO:SSOP-24_5.3x8.2mm_P0.65mm",
+        "fields": {
+          "Datasheet": "https://toshiba.semicon-storage.com/us/product/linear/motordriver/detail.TB6612FNG.html",
+          "Description": "Driver IC for Dual DC motor, SSOP-24",
+          "Footprint": "Package_SO:SSOP-24_5.3x8.2mm_P0.65mm",
+          "Sheetfile": "kicad_pro.kicad_sch",
+          "Sheetname": "",
+          "ki_fp_filters": "SSOP*5.3x8.2mm*P0.65mm*",
+          "ki_keywords": "H-bridge motor driver"
+        }
+      },
+      {
+        "ref": "U3",
+        "value": "LSM9DS1",
+        "footprint": "Package_LGA:LGA-24L_3x3.5mm_P0.43mm",
+        "fields": {
+          "Datasheet": "https://www.digikey.com/htmldatasheets/production/1639232/0/0/1/LSM9DS1-Datasheet.pdf",
+          "Description": "I2C SPI 9 axis IMU accelerometer gyroscope magnetometer",
+          "Footprint": "Package_LGA:LGA-24L_3x3.5mm_P0.43mm",
+          "Sheetfile": "kicad_pro.kicad_sch",
+          "Sheetname": "",
+          "ki_fp_filters": "LGA*3x3.5mm*P0.43mm*",
+          "ki_keywords": "I2C SPI IMU accelerometer gyroscope magnetometer"
+        }
+      },
+      {
+        "ref": "U4",
+        "value": "AMS1117-3.3",
+        "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+        "fields": {
+          "Datasheet": "http://www.advanced-monolithic.com/pdf/ds1117.pdf",
+          "Description": "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223",
+          "Footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+          "Sheetfile": "kicad_pro.kicad_sch",
+          "Sheetname": "",
+          "ki_fp_filters": "SOT?223*TabPin2*",
+          "ki_keywords": "linear regulator ldo fixed positive"
+        }
+      },
+      {
+        "ref": "U5",
+        "value": "MPU-6050",
+        "footprint": "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm",
+        "fields": {
+          "Datasheet": "https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf",
+          "Description": "InvenSense 6-Axis Motion Sensor, Gyroscope, Accelerometer, I2C",
+          "Footprint": "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm",
+          "Sheetfile": "kicad_pro.kicad_sch",
+          "Sheetname": "",
+          "ki_fp_filters": "*QFN*4x4mm*P0.5mm*",
+          "ki_keywords": "mems"
+        }
+      }
+    ],
+    "pins": [
+      {
+        "ref": "U1",
+        "pin": "1",
+        "name": "GND"
+      },
+      {
+        "ref": "U1",
+        "pin": "10",
+        "name": "IO25"
+      },
+      {
+        "ref": "U1",
+        "pin": "11",
+        "name": "IO26"
+      },
+      {
+        "ref": "U1",
+        "pin": "12",
+        "name": "IO27"
+      },
+      {
+        "ref": "U1",
+        "pin": "13",
+        "name": "IO14"
+      },
+      {
+        "ref": "U1",
+        "pin": "14",
+        "name": "IO12"
+      },
+      {
+        "ref": "U1",
+        "pin": "15",
+        "name": "GND"
+      },
+      {
+        "ref": "U1",
+        "pin": "16",
+        "name": "IO13"
+      },
+      {
+        "ref": "U1",
+        "pin": "17",
+        "name": "SHD/SD2"
+      },
+      {
+        "ref": "U1",
+        "pin": "18",
+        "name": "SWP/SD3"
+      },
+      {
+        "ref": "U1",
+        "pin": "19",
+        "name": "SCS/CMD"
+      },
+      {
+        "ref": "U1",
+        "pin": "2",
+        "name": "VDD"
+      },
+      {
+        "ref": "U1",
+        "pin": "20",
+        "name": "SCK/CLK"
+      },
+      {
+        "ref": "U1",
+        "pin": "21",
+        "name": "SDO/SD0"
+      },
+      {
+        "ref": "U1",
+        "pin": "22",
+        "name": "SDI/SD1"
+      },
+      {
+        "ref": "U1",
+        "pin": "23",
+        "name": "IO15"
+      },
+      {
+        "ref": "U1",
+        "pin": "24",
+        "name": "IO2"
+      },
+      {
+        "ref": "U1",
+        "pin": "25",
+        "name": "IO0"
+      },
+      {
+        "ref": "U1",
+        "pin": "26",
+        "name": "IO4"
+      },
+      {
+        "ref": "U1",
+        "pin": "27",
+        "name": "IO16"
+      },
+      {
+        "ref": "U1",
+        "pin": "28",
+        "name": "IO17"
+      },
+      {
+        "ref": "U1",
+        "pin": "29",
+        "name": "IO5"
+      },
+      {
+        "ref": "U1",
+        "pin": "3",
+        "name": "EN"
+      },
+      {
+        "ref": "U1",
+        "pin": "30",
+        "name": "IO18"
+      },
+      {
+        "ref": "U1",
+        "pin": "31",
+        "name": "IO19"
+      },
+      {
+        "ref": "U1",
+        "pin": "32",
+        "name": "NC"
+      },
+      {
+        "ref": "U1",
+        "pin": "33",
+        "name": "IO21"
+      },
+      {
+        "ref": "U1",
+        "pin": "34",
+        "name": "RXD0/IO3"
+      },
+      {
+        "ref": "U1",
+        "pin": "35",
+        "name": "TXD0/IO1"
+      },
+      {
+        "ref": "U1",
+        "pin": "36",
+        "name": "IO22"
+      },
+      {
+        "ref": "U1",
+        "pin": "37",
+        "name": "IO23"
+      },
+      {
+        "ref": "U1",
+        "pin": "38",
+        "name": "GND"
+      },
+      {
+        "ref": "U1",
+        "pin": "39",
+        "name": "GND"
+      },
+      {
+        "ref": "U1",
+        "pin": "4",
+        "name": "SENSOR_VP"
+      },
+      {
+        "ref": "U1",
+        "pin": "5",
+        "name": "SENSOR_VN"
+      },
+      {
+        "ref": "U1",
+        "pin": "6",
+        "name": "IO34"
+      },
+      {
+        "ref": "U1",
+        "pin": "7",
+        "name": "IO35"
+      },
+      {
+        "ref": "U1",
+        "pin": "8",
+        "name": "IO32"
+      },
+      {
+        "ref": "U1",
+        "pin": "9",
+        "name": "IO33"
+      },
+      {
+        "ref": "U2",
+        "pin": "1",
+        "name": "AO1"
+      },
+      {
+        "ref": "U2",
+        "pin": "10",
+        "name": "PGND2"
+      },
+      {
+        "ref": "U2",
+        "pin": "11",
+        "name": "BO1"
+      },
+      {
+        "ref": "U2",
+        "pin": "12",
+        "name": "BO1"
+      },
+      {
+        "ref": "U2",
+        "pin": "13",
+        "name": "VM2"
+      },
+      {
+        "ref": "U2",
+        "pin": "14",
+        "name": "VM3"
+      },
+      {
+        "ref": "U2",
+        "pin": "15",
+        "name": "PWMB"
+      },
+      {
+        "ref": "U2",
+        "pin": "16",
+        "name": "BIN2"
+      },
+      {
+        "ref": "U2",
+        "pin": "17",
+        "name": "BIN1"
+      },
+      {
+        "ref": "U2",
+        "pin": "18",
+        "name": "GND"
+      },
+      {
+        "ref": "U2",
+        "pin": "19",
+        "name": "STBY"
+      },
+      {
+        "ref": "U2",
+        "pin": "2",
+        "name": "AO1"
+      },
+      {
+        "ref": "U2",
+        "pin": "20",
+        "name": "VCC"
+      },
+      {
+        "ref": "U2",
+        "pin": "21",
+        "name": "AIN1"
+      },
+      {
+        "ref": "U2",
+        "pin": "22",
+        "name": "AIN2"
+      },
+      {
+        "ref": "U2",
+        "pin": "23",
+        "name": "PWMA"
+      },
+      {
+        "ref": "U2",
+        "pin": "24",
+        "name": "VM1"
+      },
+      {
+        "ref": "U2",
+        "pin": "3",
+        "name": "PGND1"
+      },
+      {
+        "ref": "U2",
+        "pin": "4",
+        "name": "PGND1"
+      },
+      {
+        "ref": "U2",
+        "pin": "5",
+        "name": "AO2"
+      },
+      {
+        "ref": "U2",
+        "pin": "6",
+        "name": "AO2"
+      },
+      {
+        "ref": "U2",
+        "pin": "7",
+        "name": "BO2"
+      },
+      {
+        "ref": "U2",
+        "pin": "8",
+        "name": "BO2"
+      },
+      {
+        "ref": "U2",
+        "pin": "9",
+        "name": "PGND2"
+      },
+      {
+        "ref": "U3",
+        "pin": "1",
+        "name": "VDDIO"
+      },
+      {
+        "ref": "U3",
+        "pin": "10",
+        "name": "INT_M"
+      },
+      {
+        "ref": "U3",
+        "pin": "11",
+        "name": "INT1_A/G"
+      },
+      {
+        "ref": "U3",
+        "pin": "12",
+        "name": "INT2_A/G"
+      },
+      {
+        "ref": "U3",
+        "pin": "13",
+        "name": "DEN_A/G"
+      },
+      {
+        "ref": "U3",
+        "pin": "14",
+        "name": "RES"
+      },
+      {
+        "ref": "U3",
+        "pin": "15",
+        "name": "RES"
+      },
+      {
+        "ref": "U3",
+        "pin": "16",
+        "name": "RES"
+      },
+      {
+        "ref": "U3",
+        "pin": "17",
+        "name": "RES"
+      },
+      {
+        "ref": "U3",
+        "pin": "18",
+        "name": "RES"
+      },
+      {
+        "ref": "U3",
+        "pin": "19",
+        "name": "GND"
+      },
+      {
+        "ref": "U3",
+        "pin": "2",
+        "name": "SCL/SPC"
+      },
+      {
+        "ref": "U3",
+        "pin": "20",
+        "name": "GND"
+      },
+      {
+        "ref": "U3",
+        "pin": "21",
+        "name": "CAP"
+      },
+      {
+        "ref": "U3",
+        "pin": "22",
+        "name": "VDD"
+      },
+      {
+        "ref": "U3",
+        "pin": "23",
+        "name": "VDD"
+      },
+      {
+        "ref": "U3",
+        "pin": "24",
+        "name": "C1"
+      },
+      {
+        "ref": "U3",
+        "pin": "3",
+        "name": "VDDIO"
+      },
+      {
+        "ref": "U3",
+        "pin": "4",
+        "name": "SDA/SDI/SDO"
+      },
+      {
+        "ref": "U3",
+        "pin": "5",
+        "name": "SDO_A/G"
+      },
+      {
+        "ref": "U3",
+        "pin": "6",
+        "name": "SDO_M"
+      },
+      {
+        "ref": "U3",
+        "pin": "7",
+        "name": "CS_A/G"
+      },
+      {
+        "ref": "U3",
+        "pin": "8",
+        "name": "CS_M"
+      },
+      {
+        "ref": "U3",
+        "pin": "9",
+        "name": "DRDY_M"
+      },
+      {
+        "ref": "U4",
+        "pin": "1",
+        "name": "GND"
+      },
+      {
+        "ref": "U4",
+        "pin": "2",
+        "name": "VO"
+      },
+      {
+        "ref": "U4",
+        "pin": "3",
+        "name": "VI"
+      },
+      {
+        "ref": "U5",
+        "pin": "1",
+        "name": "CLKIN"
+      },
+      {
+        "ref": "U5",
+        "pin": "10",
+        "name": "REGOUT"
+      },
+      {
+        "ref": "U5",
+        "pin": "11",
+        "name": "FSYNC"
+      },
+      {
+        "ref": "U5",
+        "pin": "12",
+        "name": "INT"
+      },
+      {
+        "ref": "U5",
+        "pin": "13",
+        "name": "VDD"
+      },
+      {
+        "ref": "U5",
+        "pin": "14",
+        "name": "NC"
+      },
+      {
+        "ref": "U5",
+        "pin": "15",
+        "name": "NC"
+      },
+      {
+        "ref": "U5",
+        "pin": "16",
+        "name": "NC"
+      },
+      {
+        "ref": "U5",
+        "pin": "17",
+        "name": "NC"
+      },
+      {
+        "ref": "U5",
+        "pin": "18",
+        "name": "GND"
+      },
+      {
+        "ref": "U5",
+        "pin": "19",
+        "name": "RESV"
+      },
+      {
+        "ref": "U5",
+        "pin": "2",
+        "name": "NC"
+      },
+      {
+        "ref": "U5",
+        "pin": "20",
+        "name": "CPOUT"
+      },
+      {
+        "ref": "U5",
+        "pin": "21",
+        "name": "RESV"
+      },
+      {
+        "ref": "U5",
+        "pin": "22",
+        "name": "RESV"
+      },
+      {
+        "ref": "U5",
+        "pin": "23",
+        "name": "SCL"
+      },
+      {
+        "ref": "U5",
+        "pin": "24",
+        "name": "SDA"
+      },
+      {
+        "ref": "U5",
+        "pin": "3",
+        "name": "NC"
+      },
+      {
+        "ref": "U5",
+        "pin": "4",
+        "name": "NC"
+      },
+      {
+        "ref": "U5",
+        "pin": "5",
+        "name": "NC"
+      },
+      {
+        "ref": "U5",
+        "pin": "6",
+        "name": "AUX_DA"
+      },
+      {
+        "ref": "U5",
+        "pin": "7",
+        "name": "AUX_CL"
+      },
+      {
+        "ref": "U5",
+        "pin": "8",
+        "name": "VLOGIC"
+      },
+      {
+        "ref": "U5",
+        "pin": "9",
+        "name": "AD0"
+      }
+    ],
+    "nets": [
+      {
+        "name": "/+3V3",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "20",
+            "name": "VCC"
+          },
+          {
+            "ref": "U2",
+            "pin": "24",
+            "name": "VM1"
+          },
+          {
+            "ref": "U4",
+            "pin": "2",
+            "name": "VO"
+          }
+        ]
+      },
+      {
+        "name": "/+5V",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "2",
+            "name": "VDD"
+          },
+          {
+            "ref": "U4",
+            "pin": "3",
+            "name": "VI"
+          }
+        ]
+      },
+      {
+        "name": "/3V3",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "13",
+            "name": "VM2"
+          },
+          {
+            "ref": "U2",
+            "pin": "14",
+            "name": "VM3"
+          },
+          {
+            "ref": "U3",
+            "pin": "22",
+            "name": "VDD"
+          },
+          {
+            "ref": "U3",
+            "pin": "23",
+            "name": "VDD"
+          },
+          {
+            "ref": "U5",
+            "pin": "13",
+            "name": "VDD"
+          }
+        ]
+      },
+      {
+        "name": "/GND",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "1",
+            "name": "GND"
+          },
+          {
+            "ref": "U1",
+            "pin": "15",
+            "name": "GND"
+          },
+          {
+            "ref": "U1",
+            "pin": "38",
+            "name": "GND"
+          },
+          {
+            "ref": "U1",
+            "pin": "39",
+            "name": "GND"
+          },
+          {
+            "ref": "U2",
+            "pin": "18",
+            "name": "GND"
+          },
+          {
+            "ref": "U3",
+            "pin": "19",
+            "name": "GND"
+          },
+          {
+            "ref": "U3",
+            "pin": "20",
+            "name": "GND"
+          },
+          {
+            "ref": "U4",
+            "pin": "1",
+            "name": "GND"
+          },
+          {
+            "ref": "U5",
+            "pin": "18",
+            "name": "GND"
+          }
+        ]
+      },
+      {
+        "name": "/I2C_SCL",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "36",
+            "name": "IO22"
+          },
+          {
+            "ref": "U3",
+            "pin": "2",
+            "name": "SCL/SPC"
+          },
+          {
+            "ref": "U5",
+            "pin": "23",
+            "name": "SCL"
+          }
+        ]
+      },
+      {
+        "name": "/I2C_SDA",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "33",
+            "name": "IO21"
+          },
+          {
+            "ref": "U3",
+            "pin": "4",
+            "name": "SDA/SDI/SDO"
+          },
+          {
+            "ref": "U5",
+            "pin": "24",
+            "name": "SDA"
+          }
+        ]
+      },
+      {
+        "name": "Net-(U2-AO1-Pad1)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "1",
+            "name": "AO1"
+          },
+          {
+            "ref": "U2",
+            "pin": "2",
+            "name": "AO1"
+          }
+        ]
+      },
+      {
+        "name": "Net-(U2-AO2-Pad5)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "5",
+            "name": "AO2"
+          },
+          {
+            "ref": "U2",
+            "pin": "6",
+            "name": "AO2"
+          }
+        ]
+      },
+      {
+        "name": "Net-(U2-BO1-Pad11)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "11",
+            "name": "BO1"
+          },
+          {
+            "ref": "U2",
+            "pin": "12",
+            "name": "BO1"
+          }
+        ]
+      },
+      {
+        "name": "Net-(U2-BO2-Pad7)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "7",
+            "name": "BO2"
+          },
+          {
+            "ref": "U2",
+            "pin": "8",
+            "name": "BO2"
+          }
+        ]
+      },
+      {
+        "name": "Net-(U2-PGND1-Pad3)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "3",
+            "name": "PGND1"
+          },
+          {
+            "ref": "U2",
+            "pin": "4",
+            "name": "PGND1"
+          }
+        ]
+      },
+      {
+        "name": "Net-(U2-PGND2-Pad10)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "10",
+            "name": "PGND2"
+          },
+          {
+            "ref": "U2",
+            "pin": "9",
+            "name": "PGND2"
+          }
+        ]
+      },
+      {
+        "name": "Net-(U3-VDDIO-Pad1)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "1",
+            "name": "VDDIO"
+          },
+          {
+            "ref": "U3",
+            "pin": "3",
+            "name": "VDDIO"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-EN-Pad3)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "3",
+            "name": "EN"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO0-Pad25)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "25",
+            "name": "IO0"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO12-Pad14)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "14",
+            "name": "IO12"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO13-Pad16)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "16",
+            "name": "IO13"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO14-Pad13)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "13",
+            "name": "IO14"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO15-Pad23)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "23",
+            "name": "IO15"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO16-Pad27)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "27",
+            "name": "IO16"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO17-Pad28)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "28",
+            "name": "IO17"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO18-Pad30)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "30",
+            "name": "IO18"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO19-Pad31)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "31",
+            "name": "IO19"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO2-Pad24)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "24",
+            "name": "IO2"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO23-Pad37)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "37",
+            "name": "IO23"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO25-Pad10)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "10",
+            "name": "IO25"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO26-Pad11)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "11",
+            "name": "IO26"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO27-Pad12)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "12",
+            "name": "IO27"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO32-Pad8)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "8",
+            "name": "IO32"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO33-Pad9)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "9",
+            "name": "IO33"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO34-Pad6)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "6",
+            "name": "IO34"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO35-Pad7)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "7",
+            "name": "IO35"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO4-Pad26)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "26",
+            "name": "IO4"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-IO5-Pad29)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "29",
+            "name": "IO5"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-NC-Pad32)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "32",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-RXD0{slash}IO3-Pad34)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "34",
+            "name": "RXD0/IO3"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-SCK{slash}CLK-Pad20)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "20",
+            "name": "SCK/CLK"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-SCS{slash}CMD-Pad19)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "19",
+            "name": "SCS/CMD"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-SDI{slash}SD1-Pad22)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "22",
+            "name": "SDI/SD1"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-SDO{slash}SD0-Pad21)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "21",
+            "name": "SDO/SD0"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-SENSOR_VN-Pad5)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "5",
+            "name": "SENSOR_VN"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-SENSOR_VP-Pad4)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "4",
+            "name": "SENSOR_VP"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-SHD{slash}SD2-Pad17)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "17",
+            "name": "SHD/SD2"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-SWP{slash}SD3-Pad18)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "18",
+            "name": "SWP/SD3"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U1-TXD0{slash}IO1-Pad35)",
+        "pins": [
+          {
+            "ref": "U1",
+            "pin": "35",
+            "name": "TXD0/IO1"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U2-AIN1-Pad21)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "21",
+            "name": "AIN1"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U2-AIN2-Pad22)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "22",
+            "name": "AIN2"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U2-BIN1-Pad17)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "17",
+            "name": "BIN1"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U2-BIN2-Pad16)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "16",
+            "name": "BIN2"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U2-PWMA-Pad23)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "23",
+            "name": "PWMA"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U2-PWMB-Pad15)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "15",
+            "name": "PWMB"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U2-STBY-Pad19)",
+        "pins": [
+          {
+            "ref": "U2",
+            "pin": "19",
+            "name": "STBY"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-C1-Pad24)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "24",
+            "name": "C1"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-CAP-Pad21)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "21",
+            "name": "CAP"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-CS_A{slash}G-Pad7)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "7",
+            "name": "CS_A/G"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-CS_M-Pad8)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "8",
+            "name": "CS_M"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-DEN_A{slash}G-Pad13)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "13",
+            "name": "DEN_A/G"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-DRDY_M-Pad9)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "9",
+            "name": "DRDY_M"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-INT1_A{slash}G-Pad11)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "11",
+            "name": "INT1_A/G"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-INT2_A{slash}G-Pad12)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "12",
+            "name": "INT2_A/G"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-INT_M-Pad10)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "10",
+            "name": "INT_M"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-RES-Pad14)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "14",
+            "name": "RES"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-RES-Pad15)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "15",
+            "name": "RES"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-RES-Pad16)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "16",
+            "name": "RES"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-RES-Pad17)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "17",
+            "name": "RES"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-RES-Pad18)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "18",
+            "name": "RES"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-SDO_A{slash}G-Pad5)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "5",
+            "name": "SDO_A/G"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U3-SDO_M-Pad6)",
+        "pins": [
+          {
+            "ref": "U3",
+            "pin": "6",
+            "name": "SDO_M"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-AD0-Pad9)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "9",
+            "name": "AD0"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-AUX_CL-Pad7)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "7",
+            "name": "AUX_CL"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-AUX_DA-Pad6)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "6",
+            "name": "AUX_DA"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-CLKIN-Pad1)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "1",
+            "name": "CLKIN"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-CPOUT-Pad20)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "20",
+            "name": "CPOUT"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-FSYNC-Pad11)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "11",
+            "name": "FSYNC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-INT-Pad12)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "12",
+            "name": "INT"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-NC-Pad14)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "14",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-NC-Pad15)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "15",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-NC-Pad16)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "16",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-NC-Pad17)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "17",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-NC-Pad2)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "2",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-NC-Pad3)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "3",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-NC-Pad4)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "4",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-NC-Pad5)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "5",
+            "name": "NC"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-REGOUT-Pad10)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "10",
+            "name": "REGOUT"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-RESV-Pad19)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "19",
+            "name": "RESV"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-RESV-Pad21)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "21",
+            "name": "RESV"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-RESV-Pad22)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "22",
+            "name": "RESV"
+          }
+        ]
+      },
+      {
+        "name": "unconnected-(U5-VLOGIC-Pad8)",
+        "pins": [
+          {
+            "ref": "U5",
+            "pin": "8",
+            "name": "VLOGIC"
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1076836766.net",
+      "parsed_at": "2026-05-05T15:14:53Z"
+    }
+  },
+  "rules": [
+    {
+      "id": "motor_driver_vm_range",
+      "rule_id": "motor_driver_vm_range",
+      "severity": "ERROR",
+      "net": "/3V3",
+      "message": "U2 motor supply pin 13 on net /3V3 sees 3.30V below VM limit 4.50V",
+      "ref": "U2",
+      "component_ref": "U2",
+      "pin": "13",
+      "source": "built-in",
+      "provenance": {
+        "source": "built-in",
+        "source_id": "TB6612FNG",
+        "detail": "curated Architon v0.3.1 built-in contract"
+      },
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "inference": {
+        "net_name": "/3V3",
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/3V3\""
+      }
+    },
+    {
+      "id": "motor_driver_vm_range",
+      "rule_id": "motor_driver_vm_range",
+      "severity": "ERROR",
+      "net": "/3V3",
+      "message": "U2 motor supply pin 14 on net /3V3 sees 3.30V below VM limit 4.50V",
+      "ref": "U2",
+      "component_ref": "U2",
+      "pin": "14",
+      "source": "built-in",
+      "provenance": {
+        "source": "built-in",
+        "source_id": "TB6612FNG",
+        "detail": "curated Architon v0.3.1 built-in contract"
+      },
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "inference": {
+        "net_name": "/3V3",
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/3V3\""
+      }
+    },
+    {
+      "id": "motor_driver_vm_range",
+      "rule_id": "motor_driver_vm_range",
+      "severity": "ERROR",
+      "net": "/+3V3",
+      "message": "U2 motor supply pin 24 on net /+3V3 sees 3.30V below VM limit 4.50V",
+      "ref": "U2",
+      "component_ref": "U2",
+      "pin": "24",
+      "source": "built-in",
+      "provenance": {
+        "source": "built-in",
+        "source_id": "TB6612FNG",
+        "detail": "curated Architon v0.3.1 built-in contract"
+      },
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "inference": {
+        "net_name": "/+3V3",
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/+3V3\""
+      }
+    },
+    {
+      "id": "supply_abs_max",
+      "rule_id": "supply_abs_max",
+      "severity": "ERROR",
+      "net": "/+5V",
+      "message": "U1 pin 2 on net /+5V sees 5.00V above absolute maximum 3.60V",
+      "ref": "U1",
+      "component_ref": "U1",
+      "pin": "2",
+      "source": "built-in",
+      "provenance": {
+        "source": "built-in",
+        "source_id": "ESP32-WROOM-32",
+        "detail": "curated Architon v0.3.1 built-in contract"
+      },
+      "fix": "Move the component to a rail within its absolute maximum voltage.",
+      "inference": {
+        "net_name": "/+5V",
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/+5V\""
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "motor_driver_vm_range",
+      "rule_id": "motor_driver_vm_range",
+      "severity": "ERROR",
+      "net": "/3V3",
+      "message": "U2 motor supply pin 13 on net /3V3 sees 3.30V below VM limit 4.50V",
+      "ref": "U2",
+      "component_ref": "U2",
+      "pin": "13",
+      "source": "built-in",
+      "provenance": {
+        "source": "built-in",
+        "source_id": "TB6612FNG",
+        "detail": "curated Architon v0.3.1 built-in contract"
+      },
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "inference": {
+        "net_name": "/3V3",
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/3V3\""
+      }
+    },
+    {
+      "id": "motor_driver_vm_range",
+      "rule_id": "motor_driver_vm_range",
+      "severity": "ERROR",
+      "net": "/3V3",
+      "message": "U2 motor supply pin 14 on net /3V3 sees 3.30V below VM limit 4.50V",
+      "ref": "U2",
+      "component_ref": "U2",
+      "pin": "14",
+      "source": "built-in",
+      "provenance": {
+        "source": "built-in",
+        "source_id": "TB6612FNG",
+        "detail": "curated Architon v0.3.1 built-in contract"
+      },
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "inference": {
+        "net_name": "/3V3",
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/3V3\""
+      }
+    },
+    {
+      "id": "motor_driver_vm_range",
+      "rule_id": "motor_driver_vm_range",
+      "severity": "ERROR",
+      "net": "/+3V3",
+      "message": "U2 motor supply pin 24 on net /+3V3 sees 3.30V below VM limit 4.50V",
+      "ref": "U2",
+      "component_ref": "U2",
+      "pin": "24",
+      "source": "built-in",
+      "provenance": {
+        "source": "built-in",
+        "source_id": "TB6612FNG",
+        "detail": "curated Architon v0.3.1 built-in contract"
+      },
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "inference": {
+        "net_name": "/+3V3",
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/+3V3\""
+      }
+    },
+    {
+      "id": "supply_abs_max",
+      "rule_id": "supply_abs_max",
+      "severity": "ERROR",
+      "net": "/+5V",
+      "message": "U1 pin 2 on net /+5V sees 5.00V above absolute maximum 3.60V",
+      "ref": "U1",
+      "component_ref": "U1",
+      "pin": "2",
+      "source": "built-in",
+      "provenance": {
+        "source": "built-in",
+        "source_id": "ESP32-WROOM-32",
+        "detail": "curated Architon v0.3.1 built-in contract"
+      },
+      "fix": "Move the component to a rail within its absolute maximum voltage.",
+      "inference": {
+        "net_name": "/+5V",
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/+5V\""
+      }
+    }
+  ],
+  "contract_coverage": {
+    "components_total": 5,
+    "components_with_contracts": 4,
+    "pins_total": 114,
+    "pins_with_contracts": 49,
+    "nets_total": 88,
+    "nets_with_contracts": 3,
+    "parts_matched": 4,
+    "contracts_applied": 11,
+    "coverage_percentage": 80,
+    "unknown_power_critical_refs": [
+      "U3"
+    ],
+    "enabled_contract_rules": [
+      "supply_abs_max",
+      "supply_recommended_range",
+      "gpio_abs_max",
+      "motor_driver_vm_range",
+      "regulator_output_current"
+    ],
+    "missing_warnings": [
+      "Missing contract data for U3 pin 22 on powered net /3V3",
+      "Missing contract data for U3 pin 23 on powered net /3V3"
+    ]
+  },
+  "derived": {
+    "net_voltages": [
+      {
+        "net": "/+3V3",
+        "voltage": 3.3,
+        "source": "initial"
+      },
+      {
+        "net": "/+5V",
+        "voltage": 5,
+        "source": "initial"
+      },
+      {
+        "net": "/3V3",
+        "voltage": 3.3,
+        "source": "initial"
+      }
+    ],
+    "inferred_net_voltages": [
+      {
+        "net": "/+3V3",
+        "voltage": 3.3,
+        "source": "net_name",
+        "confidence": "HIGH",
+        "reason": "matched exact voltage pattern \"/+3V3\""
+      },
+      {
+        "net": "/+5V",
+        "voltage": 5,
+        "source": "net_name",
+        "confidence": "HIGH",
+        "reason": "matched exact voltage pattern \"/+5V\""
+      },
+      {
+        "net": "/3V3",
+        "voltage": 3.3,
+        "source": "net_name",
+        "confidence": "HIGH",
+        "reason": "matched exact voltage pattern \"/3V3\""
+      },
+      {
+        "net": "/GND",
+        "voltage": 0,
+        "source": "net_name",
+        "confidence": "HIGH",
+        "reason": "matched ground net \"/GND\""
+      }
+    ],
+    "unknown_voltage_nets": [],
+    "rail_inferences": [
+      {
+        "net_name": "/+3V3",
+        "voltage": 3.3,
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/+3V3\"",
+        "evidence": [
+          "matched exact voltage pattern \"/+3V3\""
+        ],
+        "warnings": []
+      },
+      {
+        "net_name": "/+5V",
+        "voltage": 5,
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/+5V\"",
+        "evidence": [
+          "matched exact voltage pattern \"/+5V\""
+        ],
+        "warnings": []
+      },
+      {
+        "net_name": "/3V3",
+        "voltage": 3.3,
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched exact voltage pattern \"/3V3\"",
+        "evidence": [
+          "matched exact voltage pattern \"/3V3\""
+        ],
+        "warnings": []
+      },
+      {
+        "net_name": "/GND",
+        "voltage": 0,
+        "source": "net_name",
+        "confidence_score": 0.95,
+        "confidence_level": "HIGH",
+        "reason": "matched ground net \"/GND\"",
+        "evidence": [
+          "matched ground net \"/GND\""
+        ],
+        "warnings": []
+      }
+    ],
+    "rail_coverage": {
+      "total_nets": 88,
+      "rails_with_voltage": 4,
+      "rails_unknown": 84,
+      "high_confidence": 4,
+      "medium_confidence": 0,
+      "low_confidence": 0,
+      "unknown_confidence": 84,
+      "coverage_ratio": 0.0455,
+      "high_confidence_ratio": 0.0455,
+      "usable_for_rules_ratio": 0.0455,
+      "overall_level": "UNKNOWN",
+      "warnings": [
+        "some rails have unknown voltage and cannot be checked by voltage rules",
+        "rail voltage coverage is incomplete; voltage checks may miss issues"
+      ]
+    }
+  }
+}
