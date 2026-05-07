@@ -3,7 +3,7 @@
   "summary": {
     "source": "kicad_netlist_sexpr",
     "source_importer": "kicad",
-    "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-210675123.net",
+    "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1346180352.net",
     "parts": 3,
     "pins": 65,
     "rules": 2,
@@ -41,8 +41,8 @@
     "source_info": {
       "importer": "kicad",
       "format": "netlist_sexpr",
-      "input": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-210675123.net",
-      "imported": "2026-05-07T16:09:59Z"
+      "input": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1346180352.net",
+      "imported": "2026-05-07T17:51:09Z"
     },
     "parts": [
       {
@@ -1000,8 +1000,8 @@
       }
     ],
     "metadata": {
-      "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-210675123.net",
-      "parsed_at": "2026-05-07T16:09:59Z"
+      "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1346180352.net",
+      "parsed_at": "2026-05-07T17:51:09Z"
     }
   },
   "findings": [
