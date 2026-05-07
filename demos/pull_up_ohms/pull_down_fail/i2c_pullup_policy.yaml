@@ -1,0 +1,14 @@
+contracts:
+  - id: i2c_pullup_policy
+    description: I2C bus must have pull-up resistors between 2.2k and 10k.
+    scope:
+      bus_type: i2c
+      bus_id: i2c_main
+      nets:
+        sda: I2C_SDA
+        scl: I2C_SCL
+    require:
+      pullup_ohms:
+        min: 2200
+        max: 10000
+    severity: error
