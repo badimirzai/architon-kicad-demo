@@ -3,7 +3,7 @@
   "summary": {
     "source": "kicad_netlist_sexpr",
     "source_importer": "kicad",
-    "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-2504791518.net",
+    "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/no_pull_up/.architon/generated.net",
     "parts": 2,
     "pins": 63,
     "rules": 2,
@@ -41,8 +41,8 @@
     "source_info": {
       "importer": "kicad",
       "format": "netlist_sexpr",
-      "input": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-2504791518.net",
-      "imported": "2026-05-07T15:19:38Z"
+      "input": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/no_pull_up/.architon/generated.net",
+      "imported": "2026-05-07T21:09:04Z"
     },
     "parts": [
       {
@@ -990,8 +990,8 @@
       }
     ],
     "metadata": {
-      "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-2504791518.net",
-      "parsed_at": "2026-05-07T15:19:38Z"
+      "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/no_pull_up/.architon/generated.net",
+      "parsed_at": "2026-05-07T21:09:04Z"
     }
   },
   "findings": [
