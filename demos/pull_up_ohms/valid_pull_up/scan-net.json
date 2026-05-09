@@ -1,0 +1,44 @@
+{
+  "report_version": "1",
+  "rv_version": "v0.7.0-dev",
+  "summary": {
+    "input_path": ".architon/generated.net",
+    "source": "kicad_netlist_sexpr",
+    "violations": 1,
+    "warnings": 0,
+    "infos": 0,
+    "has_failures": true,
+    "contracts_loaded": 13,
+    "user_contracts_loaded": 1,
+    "built_in_contracts_loaded": 12,
+    "contract_coverage_pct": 66.67,
+    "rules_enabled": [
+      "common_ground",
+      "current_budget",
+      "gpio_abs_max",
+      "motor_driver_vm_range",
+      "no_i2c_address_conflict",
+      "pullup_ohms",
+      "regulator_output_current",
+      "supply_abs_max",
+      "supply_recommended_range",
+      "voltage_compatible"
+    ]
+  },
+  "findings": [
+    {
+      "id": "pullup_ohms",
+      "rule_id": "pullup_ohms",
+      "contract_id": "i2c_pullup_policy",
+      "contract_source": "user_yaml",
+      "severity": "ERROR",
+      "message": "Observed: no pull-up resistor found on net /I2C_SCL. Expected: pull-up resistor between 2.2k and 10k to a compatible positive rail.",
+      "component_ref": "",
+      "net": "/I2C_SCL",
+      "pin": "",
+      "requirement": "pullup_ohms",
+      "fix": "Use pull-ups between 2.2k and 10k to the bus voltage rail, commonly 4.7k for a 3.3V I2C bus.",
+      "provenance": "source=user_yaml; source_id=i2c_pullup_policy; detail=.architon/contracts.yaml"
+    }
+  ]
+}

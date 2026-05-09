@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_weak_pull_up/too_weak_pull_ups.kicad_sch")
-    (date "2026-05-07T23:06:04+0200")
+    (date "2026-05-09T21:34:28+0200")
     (tool "Eeschema 9.0.6")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block

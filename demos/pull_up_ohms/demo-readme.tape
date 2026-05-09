@@ -13,6 +13,6 @@ Enter
 Sleep 2000ms
 
 
-Type "rv scan . --contracts i2c_pullup_policy.yaml"
+Type "rv scan ."
 Enter
 Sleep 20000ms

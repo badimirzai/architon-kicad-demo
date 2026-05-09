@@ -1,4 +1,301 @@
-{
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architon Offline HTML Report</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --panel-2: #eef2f6;
+      --text: #17202a;
+      --muted: #5f6f82;
+      --line: #d9e0e8;
+      --pass: #147d4f;
+      --warn: #96620d;
+      --fail: #b42318;
+      --ink: #0f1720;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+    header {
+      background: var(--ink);
+      color: #ffffff;
+      border-bottom: 4px solid #5fb3a3;
+    }
+    .header-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 26px 0 24px;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+    h1, h2 { margin: 0; letter-spacing: 0; }
+    h1 { font-size: clamp(26px, 4vw, 42px); line-height: 1.05; }
+    h2 { font-size: 20px; margin-bottom: 14px; }
+    .subhead { color: #c9d3df; margin-top: 10px; overflow-wrap: anywhere; }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      color: #dce4ec;
+      font-size: 13px;
+    }
+    .pill {
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      padding: 4px 9px;
+      background: rgba(255,255,255,.06);
+      white-space: nowrap;
+    }
+    .status {
+      min-width: 108px;
+      border-radius: 6px;
+      padding: 12px 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .status-pass { background: var(--pass); }
+    .status-warn { background: var(--warn); }
+    .status-fail { background: var(--fail); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0;
+    }
+    .card, section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+    }
+    .card { padding: 14px; min-height: 92px; }
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .value {
+      margin-top: 8px;
+      font-size: 26px;
+      line-height: 1.1;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+    section { padding: 18px; margin-top: 16px; overflow: hidden; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 760px;
+    }
+    th {
+      background: var(--panel-2);
+      color: #354253;
+      text-align: left;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+    td {
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+    tr:last-child td { border-bottom: 0; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+      background: #eef2f6;
+      border: 1px solid #d8e0e8;
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+    .sev {
+      display: inline-block;
+      min-width: 58px;
+      border-radius: 999px;
+      padding: 3px 8px;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 11px;
+      text-align: center;
+    }
+    .severity-error { background: var(--fail); }
+    .severity-warn { background: var(--warn); }
+    .severity-info { background: #38698a; }
+    .empty {
+      color: var(--muted);
+      background: #fafbfc;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .data-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .header-inner { grid-template-columns: 1fr; align-items: start; }
+      .status { width: max-content; }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      main, .header-inner { width: min(100% - 20px, 1180px); }
+      .cards { grid-template-columns: 1fr; }
+      section { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div>
+        <h1>Architon Offline Report</h1>
+        <div class="subhead">.</div>
+        <div class="meta">
+          <span class="pill">rv v0.7.0-dev</span>
+          <span class="pill">report version 1</span>
+        </div>
+      </div>
+      <div class="status status-pass">PASS</div>
+    </div>
+  </header>
+  <main>
+    <div class="cards" aria-label="Summary">
+      <div class="card"><div class="label">Violations</div><div class="value">0</div></div>
+      <div class="card"><div class="label">Warnings</div><div class="value">0</div></div>
+      <div class="card"><div class="label">Contracts Loaded</div><div class="value">13</div></div>
+      <div class="card"><div class="label">User Contracts</div><div class="value">1</div></div>
+      <div class="card"><div class="label">Built-in Contracts</div><div class="value">12</div></div>
+      <div class="card"><div class="label">Contract Coverage</div><div class="value">33.33%</div></div>
+      <div class="card"><div class="label">Rail Coverage</div><div class="value">3.57% UNKNOWN</div></div>
+    </div>
+
+    <section>
+      <h2>Findings</h2>
+      
+      <div class="empty">No findings.</div>
+      
+    </section>
+
+    <section>
+      <h2>Contracts</h2>
+      
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Contract ID</th><th>Source</th><th>Severity</th><th>Component</th><th>Requirement</th></tr></thead>
+          <tbody>
+            
+            <tr><td><code>AMS1117-3.3</code></td><td>built_in</td><td>ERROR</td><td></td><td>regulator_output_current, supply_abs_max</td></tr>
+            
+            <tr><td><code>AP2114H-3.3</code></td><td>built_in</td><td>ERROR</td><td></td><td>regulator_output_current, supply_abs_max</td></tr>
+            
+            <tr><td><code>BNO055</code></td><td>built_in</td><td>ERROR</td><td></td><td>gpio_abs_max, supply_abs_max, supply_recommended_range</td></tr>
+            
+            <tr><td><code>DRV8833</code></td><td>built_in</td><td>ERROR</td><td></td><td>motor_driver_vm_range, supply_abs_max</td></tr>
+            
+            <tr><td><code>ESP32-WROOM-32</code></td><td>built_in</td><td>ERROR</td><td></td><td>gpio_abs_max, supply_abs_max, supply_recommended_range</td></tr>
+            
+            <tr><td><code>L298N</code></td><td>built_in</td><td>ERROR</td><td></td><td>motor_driver_vm_range, supply_abs_max</td></tr>
+            
+            <tr><td><code>MPU-6050</code></td><td>built_in</td><td>ERROR</td><td></td><td>gpio_abs_max, supply_abs_max, supply_recommended_range</td></tr>
+            
+            <tr><td><code>PCA9306</code></td><td>built_in</td><td>ERROR</td><td></td><td>gpio_abs_max, supply_abs_max, supply_recommended_range</td></tr>
+            
+            <tr><td><code>RP2040</code></td><td>built_in</td><td>ERROR</td><td></td><td>gpio_abs_max, supply_abs_max, supply_recommended_range</td></tr>
+            
+            <tr><td><code>STM32F103C8T6</code></td><td>built_in</td><td>ERROR</td><td></td><td>gpio_abs_max, supply_abs_max, supply_recommended_range</td></tr>
+            
+            <tr><td><code>TB6612FNG</code></td><td>built_in</td><td>ERROR</td><td></td><td>motor_driver_vm_range, supply_abs_max, supply_recommended_range</td></tr>
+            
+            <tr><td><code>TXS0108E</code></td><td>built_in</td><td>ERROR</td><td></td><td>gpio_abs_max, supply_abs_max, supply_recommended_range</td></tr>
+            
+            <tr><td><code>i2c_pullup_policy</code></td><td>user_yaml</td><td>ERROR</td><td></td><td>common_ground, pullup_ohms</td></tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+    </section>
+
+    <section>
+      <h2>Components</h2>
+      
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Component Ref</th><th>Value</th><th>Type</th><th>Contract Coverage</th><th>Findings Count</th></tr></thead>
+          <tbody>
+            
+            <tr><td><code>R1</code></td><td>10k</td><td>passive</td><td>missing</td><td>0</td></tr>
+            
+            <tr><td><code>R2</code></td><td>10k</td><td>passive</td><td>missing</td><td>0</td></tr>
+            
+            <tr><td><code>R3</code></td><td>10k</td><td>passive</td><td>missing</td><td>0</td></tr>
+            
+            <tr><td><code>R4</code></td><td>10k</td><td>passive</td><td>missing</td><td>0</td></tr>
+            
+            <tr><td><code>U1</code></td><td>ESP32-WROOM-32</td><td>mcu</td><td>partial</td><td>0</td></tr>
+            
+            <tr><td><code>U2</code></td><td>MPU-6050</td><td>sensor</td><td>partial</td><td>0</td></tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+    </section>
+
+    <section>
+      <h2>Rails</h2>
+      
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Rail</th><th>Voltage</th><th>Source</th><th>Consumers</th><th>Findings</th></tr></thead>
+          <tbody>
+            
+            <tr><td><code>/&#43;3V3</code></td><td>3.3 V</td><td>R1</td><td>R2, R3, R4, U1, U2</td><td>0</td></tr>
+            
+            <tr><td><code>GND</code></td><td>0 V</td><td></td><td>U1, U2</td><td>0</td></tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+    </section>
+
+    <section>
+      <h2>Embedded Data</h2>
+      <p class="data-note">The scan report and GraphIR payloads are embedded below for offline inspection and artifact reuse.</p>
+    </section>
+  </main>
+  <script type="application/json" id="architon-scan-json">{
   "report_version": "1",
   "summary": {
     "source": "kicad_netlist_sexpr",
@@ -42,7 +339,7 @@
       "importer": "kicad",
       "format": "netlist_sexpr",
       "input": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/parallel_pull_upp_pass/.architon/generated.net",
-      "imported": "2026-05-09T17:18:59Z"
+      "imported": "2026-05-09T17:15:30Z"
     },
     "parts": [
       {
@@ -1111,7 +1408,7 @@
     ],
     "metadata": {
       "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/parallel_pull_upp_pass/.architon/generated.net",
-      "parsed_at": "2026-05-09T17:18:59Z"
+      "parsed_at": "2026-05-09T17:15:30Z"
     }
   },
   "findings": [],
@@ -1208,4 +1505,624 @@
       ]
     }
   }
+}</script>
+  <script type="application/json" id="architon-graph-json">{
+  "graph_version": "1",
+  "rv_version": "v0.7.0-dev",
+  "input_path": ".",
+  "summary": {
+    "violations": 0,
+    "warnings": 0,
+    "infos": 0,
+    "findings": 0
+  },
+  "nodes": [
+    {
+      "id": "R1",
+      "ref": "R1",
+      "label": "R1 10k",
+      "type": "passive",
+      "contract_coverage": "missing",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SDA"
+      ],
+      "metadata": {
+        "value": "10k",
+        "footprint": "",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "R2",
+      "ref": "R2",
+      "label": "R2 10k",
+      "type": "passive",
+      "contract_coverage": "missing",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SCL"
+      ],
+      "metadata": {
+        "value": "10k",
+        "footprint": "",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "R3",
+      "ref": "R3",
+      "label": "R3 10k",
+      "type": "passive",
+      "contract_coverage": "missing",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SDA"
+      ],
+      "metadata": {
+        "value": "10k",
+        "footprint": "",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "R4",
+      "ref": "R4",
+      "label": "R4 10k",
+      "type": "passive",
+      "contract_coverage": "missing",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SCL"
+      ],
+      "metadata": {
+        "value": "10k",
+        "footprint": "",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "U1",
+      "ref": "U1",
+      "label": "U1 ESP32-WROOM-32",
+      "type": "mcu",
+      "contract_coverage": "partial",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SCL",
+        "/I2C_SDA",
+        "GND",
+        "unconnected-(U1-EN-Pad3)",
+        "unconnected-(U1-IO0-Pad25)",
+        "unconnected-(U1-IO12-Pad14)",
+        "unconnected-(U1-IO13-Pad16)",
+        "unconnected-(U1-IO14-Pad13)",
+        "unconnected-(U1-IO15-Pad23)",
+        "unconnected-(U1-IO16-Pad27)",
+        "unconnected-(U1-IO17-Pad28)",
+        "unconnected-(U1-IO18-Pad30)",
+        "unconnected-(U1-IO19-Pad31)",
+        "unconnected-(U1-IO2-Pad24)",
+        "unconnected-(U1-IO23-Pad37)",
+        "unconnected-(U1-IO25-Pad10)",
+        "unconnected-(U1-IO26-Pad11)",
+        "unconnected-(U1-IO27-Pad12)",
+        "unconnected-(U1-IO32-Pad8)",
+        "unconnected-(U1-IO33-Pad9)",
+        "unconnected-(U1-IO34-Pad6)",
+        "unconnected-(U1-IO35-Pad7)",
+        "unconnected-(U1-IO4-Pad26)",
+        "unconnected-(U1-IO5-Pad29)",
+        "unconnected-(U1-NC-Pad32)",
+        "unconnected-(U1-RXD0{slash}IO3-Pad34)",
+        "unconnected-(U1-SCK{slash}CLK-Pad20)",
+        "unconnected-(U1-SCS{slash}CMD-Pad19)",
+        "unconnected-(U1-SDI{slash}SD1-Pad22)",
+        "unconnected-(U1-SDO{slash}SD0-Pad21)",
+        "unconnected-(U1-SENSOR_VN-Pad5)",
+        "unconnected-(U1-SENSOR_VP-Pad4)",
+        "unconnected-(U1-SHD{slash}SD2-Pad17)",
+        "unconnected-(U1-SWP{slash}SD3-Pad18)",
+        "unconnected-(U1-TXD0{slash}IO1-Pad35)"
+      ],
+      "metadata": {
+        "value": "ESP32-WROOM-32",
+        "footprint": "RF_Module:ESP32-WROOM-32",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "U2",
+      "ref": "U2",
+      "label": "U2 MPU-6050",
+      "type": "sensor",
+      "contract_coverage": "partial",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SCL",
+        "/I2C_SDA",
+        "GND",
+        "unconnected-(U2-AD0-Pad9)",
+        "unconnected-(U2-AUX_CL-Pad7)",
+        "unconnected-(U2-AUX_DA-Pad6)",
+        "unconnected-(U2-CLKIN-Pad1)",
+        "unconnected-(U2-CPOUT-Pad20)",
+        "unconnected-(U2-FSYNC-Pad11)",
+        "unconnected-(U2-INT-Pad12)",
+        "unconnected-(U2-NC-Pad14)",
+        "unconnected-(U2-NC-Pad15)",
+        "unconnected-(U2-NC-Pad16)",
+        "unconnected-(U2-NC-Pad17)",
+        "unconnected-(U2-NC-Pad2)",
+        "unconnected-(U2-NC-Pad3)",
+        "unconnected-(U2-NC-Pad4)",
+        "unconnected-(U2-NC-Pad5)",
+        "unconnected-(U2-REGOUT-Pad10)",
+        "unconnected-(U2-RESV-Pad19)",
+        "unconnected-(U2-RESV-Pad21)",
+        "unconnected-(U2-RESV-Pad22)",
+        "unconnected-(U2-VLOGIC-Pad8)"
+      ],
+      "metadata": {
+        "value": "MPU-6050",
+        "footprint": "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_R1_R2_3V3",
+      "source": "R1",
+      "target": "R2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_R3_3V3",
+      "source": "R1",
+      "target": "R3",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_R3_I2C_SDA",
+      "source": "R1",
+      "target": "R3",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_R4_3V3",
+      "source": "R1",
+      "target": "R4",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_U1_3V3",
+      "source": "R1",
+      "target": "U1",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_U1_I2C_SDA",
+      "source": "R1",
+      "target": "U1",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_U2_3V3",
+      "source": "R1",
+      "target": "U2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_U2_I2C_SDA",
+      "source": "R1",
+      "target": "U2",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_R3_3V3",
+      "source": "R2",
+      "target": "R3",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_R4_3V3",
+      "source": "R2",
+      "target": "R4",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_R4_I2C_SCL",
+      "source": "R2",
+      "target": "R4",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_U1_3V3",
+      "source": "R2",
+      "target": "U1",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_U1_I2C_SCL",
+      "source": "R2",
+      "target": "U1",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_U2_3V3",
+      "source": "R2",
+      "target": "U2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_U2_I2C_SCL",
+      "source": "R2",
+      "target": "U2",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R3_R4_3V3",
+      "source": "R3",
+      "target": "R4",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R3_U1_3V3",
+      "source": "R3",
+      "target": "U1",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R3_U1_I2C_SDA",
+      "source": "R3",
+      "target": "U1",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R3_U2_3V3",
+      "source": "R3",
+      "target": "U2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R3_U2_I2C_SDA",
+      "source": "R3",
+      "target": "U2",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R4_U1_3V3",
+      "source": "R4",
+      "target": "U1",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R4_U1_I2C_SCL",
+      "source": "R4",
+      "target": "U1",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R4_U2_3V3",
+      "source": "R4",
+      "target": "U2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R4_U2_I2C_SCL",
+      "source": "R4",
+      "target": "U2",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U2_3V3",
+      "source": "U1",
+      "target": "U2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U2_GND",
+      "source": "U1",
+      "target": "U2",
+      "net": "GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U2_I2C_SCL",
+      "source": "U1",
+      "target": "U2",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U2_I2C_SDA",
+      "source": "U1",
+      "target": "U2",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "rails": [
+    {
+      "name": "/+3V3",
+      "voltage_v": 3.3,
+      "source_ref": "R1",
+      "consumers": [
+        "R2",
+        "R3",
+        "R4",
+        "U1",
+        "U2"
+      ],
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "name": "GND",
+      "voltage_v": 0,
+      "source_ref": "",
+      "consumers": [
+        "U1",
+        "U2"
+      ],
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "I2C_1",
+      "type": "i2c",
+      "nets": [
+        "/I2C_SCL",
+        "/I2C_SDA"
+      ],
+      "participants": [
+        "U1",
+        "U2"
+      ],
+      "pullups": [
+        {
+          "ref": "R1",
+          "net": "/I2C_SDA",
+          "resistance_ohms": 10000,
+          "to_net": "/+3V3"
+        },
+        {
+          "ref": "R2",
+          "net": "/I2C_SCL",
+          "resistance_ohms": 10000,
+          "to_net": "/+3V3"
+        },
+        {
+          "ref": "R3",
+          "net": "/I2C_SDA",
+          "resistance_ohms": 10000,
+          "to_net": "/+3V3"
+        },
+        {
+          "ref": "R4",
+          "net": "/I2C_SCL",
+          "resistance_ohms": 10000,
+          "to_net": "/+3V3"
+        }
+      ],
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "findings": [],
+  "findings_index": {}
 }
+</script>
+</body>
+</html>

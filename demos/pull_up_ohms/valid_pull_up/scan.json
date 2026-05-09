@@ -1,0 +1,29 @@
+{
+  "report_version": "1",
+  "rv_version": "v0.7.0-dev",
+  "summary": {
+    "input_path": ".",
+    "source": "kicad_netlist_sexpr",
+    "violations": 0,
+    "warnings": 0,
+    "infos": 0,
+    "has_failures": false,
+    "contracts_loaded": 13,
+    "user_contracts_loaded": 1,
+    "built_in_contracts_loaded": 12,
+    "contract_coverage_pct": 50,
+    "rules_enabled": [
+      "common_ground",
+      "current_budget",
+      "gpio_abs_max",
+      "motor_driver_vm_range",
+      "no_i2c_address_conflict",
+      "pullup_ohms",
+      "regulator_output_current",
+      "supply_abs_max",
+      "supply_recommended_range",
+      "voltage_compatible"
+    ]
+  },
+  "findings": []
+}

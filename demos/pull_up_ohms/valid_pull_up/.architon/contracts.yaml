@@ -1,0 +1,11 @@
+contracts:
+  - id: i2c_pullup_policy
+    description: Require I2C pull-ups to be present and within a sane default range.
+    scope:
+      bus_type: i2c
+    require:
+      common_ground: true
+      pullup_ohms:
+        min: 2200
+        max: 10000
+    severity: error

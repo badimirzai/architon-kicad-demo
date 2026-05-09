@@ -3,9 +3,9 @@
   "summary": {
     "source": "kicad_netlist_sexpr",
     "source_importer": "kicad",
-    "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/parallel_pull_upp_pass/.architon/generated.net",
-    "parts": 6,
-    "pins": 71,
+    "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/valid_pull_up/.architon/generated.net",
+    "parts": 4,
+    "pins": 67,
     "rules": 0,
     "has_failures": false,
     "parse_errors_count": 0,
@@ -19,9 +19,9 @@
     "active_user_requirements": 2,
     "available_contract_rules": 10,
     "requirements_enabled": 2,
-    "part_contract_coverage_percentage": 33.33,
+    "part_contract_coverage_percentage": 50,
     "contracts_applied": 8,
-    "contract_coverage_percentage": 33.33,
+    "contract_coverage_percentage": 50,
     "enabled_contract_rules": [
       "supply_abs_max",
       "supply_recommended_range",
@@ -41,19 +41,19 @@
     "source_info": {
       "importer": "kicad",
       "format": "netlist_sexpr",
-      "input": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/parallel_pull_upp_pass/.architon/generated.net",
-      "imported": "2026-05-09T17:18:59Z"
+      "input": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/valid_pull_up/.architon/generated.net",
+      "imported": "2026-05-09T20:11:21Z"
     },
     "parts": [
       {
         "ref": "R1",
-        "value": "10k",
+        "value": "4.7k",
         "footprint": "",
         "fields": {
           "Datasheet": "~",
           "Description": "Resistor",
           "Footprint": "",
-          "Sheetfile": "parallel_pull_ups.kicad_sch",
+          "Sheetfile": "valid_pull_ups.kicad_sch",
           "Sheetname": "",
           "ki_fp_filters": "R_*",
           "ki_keywords": "R res resistor"
@@ -61,41 +61,13 @@
       },
       {
         "ref": "R2",
-        "value": "10k",
+        "value": "4.7k",
         "footprint": "",
         "fields": {
           "Datasheet": "~",
           "Description": "Resistor",
           "Footprint": "",
-          "Sheetfile": "parallel_pull_ups.kicad_sch",
-          "Sheetname": "",
-          "ki_fp_filters": "R_*",
-          "ki_keywords": "R res resistor"
-        }
-      },
-      {
-        "ref": "R3",
-        "value": "10k",
-        "footprint": "",
-        "fields": {
-          "Datasheet": "~",
-          "Description": "Resistor",
-          "Footprint": "",
-          "Sheetfile": "parallel_pull_ups.kicad_sch",
-          "Sheetname": "",
-          "ki_fp_filters": "R_*",
-          "ki_keywords": "R res resistor"
-        }
-      },
-      {
-        "ref": "R4",
-        "value": "10k",
-        "footprint": "",
-        "fields": {
-          "Datasheet": "~",
-          "Description": "Resistor",
-          "Footprint": "",
-          "Sheetfile": "parallel_pull_ups.kicad_sch",
+          "Sheetfile": "valid_pull_ups.kicad_sch",
           "Sheetname": "",
           "ki_fp_filters": "R_*",
           "ki_keywords": "R res resistor"
@@ -109,7 +81,7 @@
           "Datasheet": "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf",
           "Description": "RF Module, ESP32-D0WDQ6 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, onboard antenna, SMD",
           "Footprint": "RF_Module:ESP32-WROOM-32",
-          "Sheetfile": "parallel_pull_ups.kicad_sch",
+          "Sheetfile": "valid_pull_ups.kicad_sch",
           "Sheetname": "",
           "ki_fp_filters": "ESP32?WROOM?32*",
           "ki_keywords": "RF Radio BT ESP ESP32 Espressif onboard PCB antenna"
@@ -123,7 +95,7 @@
           "Datasheet": "https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf",
           "Description": "InvenSense 6-Axis Motion Sensor, Gyroscope, Accelerometer, I2C",
           "Footprint": "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm",
-          "Sheetfile": "parallel_pull_ups.kicad_sch",
+          "Sheetfile": "valid_pull_ups.kicad_sch",
           "Sheetname": "",
           "i2c_address": "0x68",
           "ki_fp_filters": "*QFN*4x4mm*P0.5mm*",
@@ -146,22 +118,6 @@
       },
       {
         "ref": "R2",
-        "pin": "2"
-      },
-      {
-        "ref": "R3",
-        "pin": "1"
-      },
-      {
-        "ref": "R3",
-        "pin": "2"
-      },
-      {
-        "ref": "R4",
-        "pin": "1"
-      },
-      {
-        "ref": "R4",
         "pin": "2"
       },
       {
@@ -493,14 +449,6 @@
             "pin": "1"
           },
           {
-            "ref": "R3",
-            "pin": "1"
-          },
-          {
-            "ref": "R4",
-            "pin": "1"
-          },
-          {
             "ref": "U1",
             "pin": "2",
             "name": "VDD"
@@ -520,10 +468,6 @@
             "pin": "2"
           },
           {
-            "ref": "R4",
-            "pin": "2"
-          },
-          {
             "ref": "U1",
             "pin": "36",
             "name": "IO22"
@@ -540,10 +484,6 @@
         "pins": [
           {
             "ref": "R1",
-            "pin": "2"
-          },
-          {
-            "ref": "R3",
             "pin": "2"
           },
           {
@@ -1110,22 +1050,22 @@
       }
     ],
     "metadata": {
-      "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/parallel_pull_upp_pass/.architon/generated.net",
-      "parsed_at": "2026-05-09T17:18:59Z"
+      "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/valid_pull_up/.architon/generated.net",
+      "parsed_at": "2026-05-09T20:11:21Z"
     }
   },
   "findings": [],
   "rules": [],
   "contract_coverage": {
-    "components_total": 6,
+    "components_total": 4,
     "components_with_contracts": 2,
-    "pins_total": 71,
+    "pins_total": 67,
     "pins_with_contracts": 37,
     "nets_total": 56,
     "nets_with_contracts": 1,
     "parts_matched": 2,
     "contracts_applied": 8,
-    "coverage_percentage": 33.33,
+    "coverage_percentage": 50,
     "enabled_contract_rules": [
       "supply_abs_max",
       "supply_recommended_range",

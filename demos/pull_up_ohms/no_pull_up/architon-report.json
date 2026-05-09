@@ -6,21 +6,21 @@
     "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/no_pull_up/.architon/generated.net",
     "parts": 2,
     "pins": 63,
-    "rules": 2,
-    "has_failures": true,
+    "rules": 0,
+    "has_failures": false,
     "parse_errors_count": 0,
     "parse_warnings_count": 0,
     "parse_errors": [],
     "parse_warnings": [],
     "nets": 56,
     "parts_matched": 2,
-    "user_contracts_loaded": 1,
+    "user_contracts_loaded": 0,
     "built_in_contracts_loaded": 12,
-    "active_user_requirements": 1,
+    "active_user_requirements": 0,
     "available_contract_rules": 10,
-    "requirements_enabled": 1,
+    "requirements_enabled": 0,
     "part_contract_coverage_percentage": 100,
-    "contracts_applied": 7,
+    "contracts_applied": 6,
     "contract_coverage_percentage": 100,
     "enabled_contract_rules": [
       "supply_abs_max",
@@ -42,7 +42,7 @@
       "importer": "kicad",
       "format": "netlist_sexpr",
       "input": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/no_pull_up/.architon/generated.net",
-      "imported": "2026-05-07T21:09:04Z"
+      "imported": "2026-05-09T17:06:21Z"
     },
     "parts": [
       {
@@ -991,145 +991,11 @@
     ],
     "metadata": {
       "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/no_pull_up/.architon/generated.net",
-      "parsed_at": "2026-05-07T21:09:04Z"
+      "parsed_at": "2026-05-09T17:06:21Z"
     }
   },
-  "findings": [
-    {
-      "id": "pullup_ohms",
-      "rule_id": "pullup_ohms",
-      "severity": "ERROR",
-      "net": "/I2C_SCL",
-      "message": "Net /I2C_SCL has no pull-up resistor in scope",
-      "bus_id": "i2c_main",
-      "bus_type": "i2c",
-      "bus_nets": {
-        "sda": "I2C_SDA",
-        "scl": "I2C_SCL"
-      },
-      "min_pullup_ohms": 2200,
-      "max_pullup_ohms": 10000,
-      "source": "user_yaml",
-      "contract_id": "i2c_pullup_policy",
-      "contract_source": "user_yaml",
-      "contract_file": "i2c_pullup_policy.yaml",
-      "requirement": "pullup_ohms",
-      "provenance": {
-        "source": "user_yaml",
-        "source_id": "i2c_pullup_policy",
-        "detail": "i2c_pullup_policy.yaml"
-      },
-      "fix": "Add or resize pull-up resistors so the effective pull-up resistance is within the contract range.",
-      "inference": {
-        "net_name": "/I2C_SCL",
-        "source": "UNKNOWN",
-        "confidence_score": 0,
-        "confidence_level": "UNKNOWN",
-        "reason": "no voltage evidence found in net name \"/I2C_SCL\""
-      }
-    },
-    {
-      "id": "pullup_ohms",
-      "rule_id": "pullup_ohms",
-      "severity": "ERROR",
-      "net": "/I2C_SDA",
-      "message": "Net /I2C_SDA has no pull-up resistor in scope",
-      "bus_id": "i2c_main",
-      "bus_type": "i2c",
-      "bus_nets": {
-        "sda": "I2C_SDA",
-        "scl": "I2C_SCL"
-      },
-      "min_pullup_ohms": 2200,
-      "max_pullup_ohms": 10000,
-      "source": "user_yaml",
-      "contract_id": "i2c_pullup_policy",
-      "contract_source": "user_yaml",
-      "contract_file": "i2c_pullup_policy.yaml",
-      "requirement": "pullup_ohms",
-      "provenance": {
-        "source": "user_yaml",
-        "source_id": "i2c_pullup_policy",
-        "detail": "i2c_pullup_policy.yaml"
-      },
-      "fix": "Add or resize pull-up resistors so the effective pull-up resistance is within the contract range.",
-      "inference": {
-        "net_name": "/I2C_SDA",
-        "source": "UNKNOWN",
-        "confidence_score": 0,
-        "confidence_level": "UNKNOWN",
-        "reason": "no voltage evidence found in net name \"/I2C_SDA\""
-      }
-    }
-  ],
-  "rules": [
-    {
-      "id": "pullup_ohms",
-      "rule_id": "pullup_ohms",
-      "severity": "ERROR",
-      "net": "/I2C_SCL",
-      "message": "Net /I2C_SCL has no pull-up resistor in scope",
-      "bus_id": "i2c_main",
-      "bus_type": "i2c",
-      "bus_nets": {
-        "sda": "I2C_SDA",
-        "scl": "I2C_SCL"
-      },
-      "min_pullup_ohms": 2200,
-      "max_pullup_ohms": 10000,
-      "source": "user_yaml",
-      "contract_id": "i2c_pullup_policy",
-      "contract_source": "user_yaml",
-      "contract_file": "i2c_pullup_policy.yaml",
-      "requirement": "pullup_ohms",
-      "provenance": {
-        "source": "user_yaml",
-        "source_id": "i2c_pullup_policy",
-        "detail": "i2c_pullup_policy.yaml"
-      },
-      "fix": "Add or resize pull-up resistors so the effective pull-up resistance is within the contract range.",
-      "inference": {
-        "net_name": "/I2C_SCL",
-        "source": "UNKNOWN",
-        "confidence_score": 0,
-        "confidence_level": "UNKNOWN",
-        "reason": "no voltage evidence found in net name \"/I2C_SCL\""
-      }
-    },
-    {
-      "id": "pullup_ohms",
-      "rule_id": "pullup_ohms",
-      "severity": "ERROR",
-      "net": "/I2C_SDA",
-      "message": "Net /I2C_SDA has no pull-up resistor in scope",
-      "bus_id": "i2c_main",
-      "bus_type": "i2c",
-      "bus_nets": {
-        "sda": "I2C_SDA",
-        "scl": "I2C_SCL"
-      },
-      "min_pullup_ohms": 2200,
-      "max_pullup_ohms": 10000,
-      "source": "user_yaml",
-      "contract_id": "i2c_pullup_policy",
-      "contract_source": "user_yaml",
-      "contract_file": "i2c_pullup_policy.yaml",
-      "requirement": "pullup_ohms",
-      "provenance": {
-        "source": "user_yaml",
-        "source_id": "i2c_pullup_policy",
-        "detail": "i2c_pullup_policy.yaml"
-      },
-      "fix": "Add or resize pull-up resistors so the effective pull-up resistance is within the contract range.",
-      "inference": {
-        "net_name": "/I2C_SDA",
-        "source": "UNKNOWN",
-        "confidence_score": 0,
-        "confidence_level": "UNKNOWN",
-        "reason": "no voltage evidence found in net name \"/I2C_SDA\""
-      }
-    }
-  ],
+  "findings": [],
+  "rules": [],
   "contract_coverage": {
     "components_total": 2,
     "components_with_contracts": 2,
@@ -1138,7 +1004,7 @@
     "nets_total": 56,
     "nets_with_contracts": 1,
     "parts_matched": 2,
-    "contracts_applied": 7,
+    "contracts_applied": 6,
     "coverage_percentage": 100,
     "enabled_contract_rules": [
       "supply_abs_max",

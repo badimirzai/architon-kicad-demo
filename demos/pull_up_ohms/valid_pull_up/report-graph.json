@@ -1,0 +1,379 @@
+{
+  "graph_version": "1",
+  "rv_version": "v0.7.0-dev",
+  "input_path": ".",
+  "summary": {
+    "violations": 0,
+    "warnings": 0,
+    "infos": 0,
+    "findings": 0,
+    "has_failures": false,
+    "user_contracts_loaded": 1,
+    "built_in_contracts_loaded": 12,
+    "active_user_requirements": 2
+  },
+  "nodes": [
+    {
+      "id": "R1",
+      "ref": "R1",
+      "label": "R1 4.7k",
+      "type": "passive",
+      "contract_coverage": "missing",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SDA"
+      ],
+      "metadata": {
+        "value": "4.7k",
+        "footprint": "",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "R2",
+      "ref": "R2",
+      "label": "R2 4.7k",
+      "type": "passive",
+      "contract_coverage": "missing",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SCL"
+      ],
+      "metadata": {
+        "value": "4.7k",
+        "footprint": "",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "U1",
+      "ref": "U1",
+      "label": "U1 ESP32-WROOM-32",
+      "type": "mcu",
+      "contract_coverage": "partial",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SCL",
+        "/I2C_SDA",
+        "GND",
+        "unconnected-(U1-EN-Pad3)",
+        "unconnected-(U1-IO0-Pad25)",
+        "unconnected-(U1-IO12-Pad14)",
+        "unconnected-(U1-IO13-Pad16)",
+        "unconnected-(U1-IO14-Pad13)",
+        "unconnected-(U1-IO15-Pad23)",
+        "unconnected-(U1-IO16-Pad27)",
+        "unconnected-(U1-IO17-Pad28)",
+        "unconnected-(U1-IO18-Pad30)",
+        "unconnected-(U1-IO19-Pad31)",
+        "unconnected-(U1-IO2-Pad24)",
+        "unconnected-(U1-IO23-Pad37)",
+        "unconnected-(U1-IO25-Pad10)",
+        "unconnected-(U1-IO26-Pad11)",
+        "unconnected-(U1-IO27-Pad12)",
+        "unconnected-(U1-IO32-Pad8)",
+        "unconnected-(U1-IO33-Pad9)",
+        "unconnected-(U1-IO34-Pad6)",
+        "unconnected-(U1-IO35-Pad7)",
+        "unconnected-(U1-IO4-Pad26)",
+        "unconnected-(U1-IO5-Pad29)",
+        "unconnected-(U1-NC-Pad32)",
+        "unconnected-(U1-RXD0{slash}IO3-Pad34)",
+        "unconnected-(U1-SCK{slash}CLK-Pad20)",
+        "unconnected-(U1-SCS{slash}CMD-Pad19)",
+        "unconnected-(U1-SDI{slash}SD1-Pad22)",
+        "unconnected-(U1-SDO{slash}SD0-Pad21)",
+        "unconnected-(U1-SENSOR_VN-Pad5)",
+        "unconnected-(U1-SENSOR_VP-Pad4)",
+        "unconnected-(U1-SHD{slash}SD2-Pad17)",
+        "unconnected-(U1-SWP{slash}SD3-Pad18)",
+        "unconnected-(U1-TXD0{slash}IO1-Pad35)"
+      ],
+      "metadata": {
+        "value": "ESP32-WROOM-32",
+        "footprint": "RF_Module:ESP32-WROOM-32",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "U2",
+      "ref": "U2",
+      "label": "U2 MPU-6050",
+      "type": "sensor",
+      "contract_coverage": "partial",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/I2C_SCL",
+        "/I2C_SDA",
+        "GND",
+        "unconnected-(U2-AD0-Pad9)",
+        "unconnected-(U2-AUX_CL-Pad7)",
+        "unconnected-(U2-AUX_DA-Pad6)",
+        "unconnected-(U2-CLKIN-Pad1)",
+        "unconnected-(U2-CPOUT-Pad20)",
+        "unconnected-(U2-FSYNC-Pad11)",
+        "unconnected-(U2-INT-Pad12)",
+        "unconnected-(U2-NC-Pad14)",
+        "unconnected-(U2-NC-Pad15)",
+        "unconnected-(U2-NC-Pad16)",
+        "unconnected-(U2-NC-Pad17)",
+        "unconnected-(U2-NC-Pad2)",
+        "unconnected-(U2-NC-Pad3)",
+        "unconnected-(U2-NC-Pad4)",
+        "unconnected-(U2-NC-Pad5)",
+        "unconnected-(U2-REGOUT-Pad10)",
+        "unconnected-(U2-RESV-Pad19)",
+        "unconnected-(U2-RESV-Pad21)",
+        "unconnected-(U2-RESV-Pad22)",
+        "unconnected-(U2-VLOGIC-Pad8)"
+      ],
+      "metadata": {
+        "value": "MPU-6050",
+        "footprint": "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_R1_R2_3V3",
+      "source": "R1",
+      "target": "R2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_U1_3V3",
+      "source": "R1",
+      "target": "U1",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_U1_I2C_SDA",
+      "source": "R1",
+      "target": "U1",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_U2_3V3",
+      "source": "R1",
+      "target": "U2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R1_U2_I2C_SDA",
+      "source": "R1",
+      "target": "U2",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_U1_3V3",
+      "source": "R2",
+      "target": "U1",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_U1_I2C_SCL",
+      "source": "R2",
+      "target": "U1",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_U2_3V3",
+      "source": "R2",
+      "target": "U2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_R2_U2_I2C_SCL",
+      "source": "R2",
+      "target": "U2",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U2_3V3",
+      "source": "U1",
+      "target": "U2",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U2_GND",
+      "source": "U1",
+      "target": "U2",
+      "net": "GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U2_I2C_SCL",
+      "source": "U1",
+      "target": "U2",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U2_I2C_SDA",
+      "source": "U1",
+      "target": "U2",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "rails": [
+    {
+      "name": "/+3V3",
+      "voltage_v": 3.3,
+      "source_ref": "",
+      "consumers": [
+        "R1",
+        "R2",
+        "U1",
+        "U2"
+      ],
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "name": "GND",
+      "voltage_v": 0,
+      "source_ref": "",
+      "consumers": [
+        "U1",
+        "U2"
+      ],
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "I2C_1",
+      "type": "i2c",
+      "nets": [
+        "/I2C_SCL",
+        "/I2C_SDA"
+      ],
+      "participants": [
+        "U1",
+        "U2"
+      ],
+      "pullups": [
+        {
+          "ref": "R1",
+          "net": "/I2C_SDA",
+          "resistance_ohms": 4700,
+          "to_net": "/+3V3"
+        },
+        {
+          "ref": "R2",
+          "net": "/I2C_SCL",
+          "resistance_ohms": 4700,
+          "to_net": "/+3V3"
+        }
+      ],
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "findings": [],
+  "findings_index": {}
+}

@@ -16,11 +16,11 @@
     "parts_matched": 2,
     "user_contracts_loaded": 1,
     "built_in_contracts_loaded": 12,
-    "active_user_requirements": 1,
+    "active_user_requirements": 2,
     "available_contract_rules": 10,
-    "requirements_enabled": 1,
+    "requirements_enabled": 2,
     "part_contract_coverage_percentage": 50,
-    "contracts_applied": 7,
+    "contracts_applied": 8,
     "contract_coverage_percentage": 50,
     "enabled_contract_rules": [
       "supply_abs_max",
@@ -42,7 +42,7 @@
       "importer": "kicad",
       "format": "netlist_sexpr",
       "input": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/generated.net",
-      "imported": "2026-05-07T21:01:00Z"
+      "imported": "2026-05-09T20:44:23Z"
     },
     "parts": [
       {
@@ -1051,24 +1051,19 @@
     ],
     "metadata": {
       "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/generated.net",
-      "parsed_at": "2026-05-07T21:01:00Z"
+      "parsed_at": "2026-05-09T20:44:23Z"
     }
   },
   "findings": [
     {
-      "id": "pullup_ohms",
+      "id": "pullup_ohms_01",
       "rule_id": "pullup_ohms",
       "severity": "ERROR",
       "net": "/I2C_SCL",
-      "message": "Net /I2C_SCL effective pull-up 1000 ohms is below minimum 2200 ohms",
+      "message": "Observed: effective pull-up on /I2C_SCL is 1k. Expected: 2.2k to 10k.",
       "ref": "R2",
       "component_ref": "R2",
-      "bus_id": "i2c_main",
       "bus_type": "i2c",
-      "bus_nets": {
-        "sda": "I2C_SDA",
-        "scl": "I2C_SCL"
-      },
       "effective_pullup_ohms": 1000,
       "min_pullup_ohms": 2200,
       "max_pullup_ohms": 10000,
@@ -1078,14 +1073,15 @@
       "source": "user_yaml",
       "contract_id": "i2c_pullup_policy",
       "contract_source": "user_yaml",
-      "contract_file": "i2c_pullup_policy.yaml",
+      "contract_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/contracts.yaml",
       "requirement": "pullup_ohms",
       "provenance": {
         "source": "user_yaml",
         "source_id": "i2c_pullup_policy",
-        "detail": "i2c_pullup_policy.yaml"
+        "detail": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/contracts.yaml"
       },
-      "fix": "Add or resize pull-up resistors so the effective pull-up resistance is within the contract range.",
+      "fix": "Use pull-ups between 2.2k and 10k to the bus voltage rail, commonly 4.7k for a 3.3V I2C bus.",
+      "why_this_matters": "Too-low pull-up resistance increases sink current when devices pull the line low. This can exceed device limits and distort bus behavior.",
       "inference": {
         "net_name": "/I2C_SCL",
         "source": "UNKNOWN",
@@ -1095,19 +1091,14 @@
       }
     },
     {
-      "id": "pullup_ohms",
+      "id": "pullup_ohms_02",
       "rule_id": "pullup_ohms",
       "severity": "ERROR",
       "net": "/I2C_SDA",
-      "message": "Net /I2C_SDA effective pull-up 1000 ohms is below minimum 2200 ohms",
+      "message": "Observed: effective pull-up on /I2C_SDA is 1k. Expected: 2.2k to 10k.",
       "ref": "R1",
       "component_ref": "R1",
-      "bus_id": "i2c_main",
       "bus_type": "i2c",
-      "bus_nets": {
-        "sda": "I2C_SDA",
-        "scl": "I2C_SCL"
-      },
       "effective_pullup_ohms": 1000,
       "min_pullup_ohms": 2200,
       "max_pullup_ohms": 10000,
@@ -1117,14 +1108,15 @@
       "source": "user_yaml",
       "contract_id": "i2c_pullup_policy",
       "contract_source": "user_yaml",
-      "contract_file": "i2c_pullup_policy.yaml",
+      "contract_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/contracts.yaml",
       "requirement": "pullup_ohms",
       "provenance": {
         "source": "user_yaml",
         "source_id": "i2c_pullup_policy",
-        "detail": "i2c_pullup_policy.yaml"
+        "detail": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/contracts.yaml"
       },
-      "fix": "Add or resize pull-up resistors so the effective pull-up resistance is within the contract range.",
+      "fix": "Use pull-ups between 2.2k and 10k to the bus voltage rail, commonly 4.7k for a 3.3V I2C bus.",
+      "why_this_matters": "Too-low pull-up resistance increases sink current when devices pull the line low. This can exceed device limits and distort bus behavior.",
       "inference": {
         "net_name": "/I2C_SDA",
         "source": "UNKNOWN",
@@ -1136,19 +1128,14 @@
   ],
   "rules": [
     {
-      "id": "pullup_ohms",
+      "id": "pullup_ohms_01",
       "rule_id": "pullup_ohms",
       "severity": "ERROR",
       "net": "/I2C_SCL",
-      "message": "Net /I2C_SCL effective pull-up 1000 ohms is below minimum 2200 ohms",
+      "message": "Observed: effective pull-up on /I2C_SCL is 1k. Expected: 2.2k to 10k.",
       "ref": "R2",
       "component_ref": "R2",
-      "bus_id": "i2c_main",
       "bus_type": "i2c",
-      "bus_nets": {
-        "sda": "I2C_SDA",
-        "scl": "I2C_SCL"
-      },
       "effective_pullup_ohms": 1000,
       "min_pullup_ohms": 2200,
       "max_pullup_ohms": 10000,
@@ -1158,14 +1145,15 @@
       "source": "user_yaml",
       "contract_id": "i2c_pullup_policy",
       "contract_source": "user_yaml",
-      "contract_file": "i2c_pullup_policy.yaml",
+      "contract_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/contracts.yaml",
       "requirement": "pullup_ohms",
       "provenance": {
         "source": "user_yaml",
         "source_id": "i2c_pullup_policy",
-        "detail": "i2c_pullup_policy.yaml"
+        "detail": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/contracts.yaml"
       },
-      "fix": "Add or resize pull-up resistors so the effective pull-up resistance is within the contract range.",
+      "fix": "Use pull-ups between 2.2k and 10k to the bus voltage rail, commonly 4.7k for a 3.3V I2C bus.",
+      "why_this_matters": "Too-low pull-up resistance increases sink current when devices pull the line low. This can exceed device limits and distort bus behavior.",
       "inference": {
         "net_name": "/I2C_SCL",
         "source": "UNKNOWN",
@@ -1175,19 +1163,14 @@
       }
     },
     {
-      "id": "pullup_ohms",
+      "id": "pullup_ohms_02",
       "rule_id": "pullup_ohms",
       "severity": "ERROR",
       "net": "/I2C_SDA",
-      "message": "Net /I2C_SDA effective pull-up 1000 ohms is below minimum 2200 ohms",
+      "message": "Observed: effective pull-up on /I2C_SDA is 1k. Expected: 2.2k to 10k.",
       "ref": "R1",
       "component_ref": "R1",
-      "bus_id": "i2c_main",
       "bus_type": "i2c",
-      "bus_nets": {
-        "sda": "I2C_SDA",
-        "scl": "I2C_SCL"
-      },
       "effective_pullup_ohms": 1000,
       "min_pullup_ohms": 2200,
       "max_pullup_ohms": 10000,
@@ -1197,14 +1180,15 @@
       "source": "user_yaml",
       "contract_id": "i2c_pullup_policy",
       "contract_source": "user_yaml",
-      "contract_file": "i2c_pullup_policy.yaml",
+      "contract_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/contracts.yaml",
       "requirement": "pullup_ohms",
       "provenance": {
         "source": "user_yaml",
         "source_id": "i2c_pullup_policy",
-        "detail": "i2c_pullup_policy.yaml"
+        "detail": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/too_strong_pull_up/.architon/contracts.yaml"
       },
-      "fix": "Add or resize pull-up resistors so the effective pull-up resistance is within the contract range.",
+      "fix": "Use pull-ups between 2.2k and 10k to the bus voltage rail, commonly 4.7k for a 3.3V I2C bus.",
+      "why_this_matters": "Too-low pull-up resistance increases sink current when devices pull the line low. This can exceed device limits and distort bus behavior.",
       "inference": {
         "net_name": "/I2C_SDA",
         "source": "UNKNOWN",
@@ -1222,7 +1206,7 @@
     "nets_total": 56,
     "nets_with_contracts": 1,
     "parts_matched": 2,
-    "contracts_applied": 7,
+    "contracts_applied": 8,
     "coverage_percentage": 50,
     "enabled_contract_rules": [
       "supply_abs_max",

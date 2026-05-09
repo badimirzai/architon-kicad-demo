@@ -3,7 +3,7 @@
   "summary": {
     "source": "kicad_netlist_sexpr",
     "source_importer": "kicad",
-    "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-2709045671.net",
+    "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/valid_pull_up/.architon/generated.net",
     "parts": 4,
     "pins": 67,
     "rules": 0,
@@ -16,11 +16,11 @@
     "parts_matched": 2,
     "user_contracts_loaded": 1,
     "built_in_contracts_loaded": 12,
-    "active_user_requirements": 1,
+    "active_user_requirements": 2,
     "available_contract_rules": 10,
-    "requirements_enabled": 1,
+    "requirements_enabled": 2,
     "part_contract_coverage_percentage": 50,
-    "contracts_applied": 7,
+    "contracts_applied": 8,
     "contract_coverage_percentage": 50,
     "enabled_contract_rules": [
       "supply_abs_max",
@@ -41,8 +41,8 @@
     "source_info": {
       "importer": "kicad",
       "format": "netlist_sexpr",
-      "input": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-2709045671.net",
-      "imported": "2026-05-07T15:33:11Z"
+      "input": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/valid_pull_up/.architon/generated.net",
+      "imported": "2026-05-09T20:11:21Z"
     },
     "parts": [
       {
@@ -1050,8 +1050,8 @@
       }
     ],
     "metadata": {
-      "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-2709045671.net",
-      "parsed_at": "2026-05-07T15:33:11Z"
+      "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/pull_up_ohms/valid_pull_up/.architon/generated.net",
+      "parsed_at": "2026-05-09T20:11:21Z"
     }
   },
   "findings": [],
@@ -1064,7 +1064,7 @@
     "nets_total": 56,
     "nets_with_contracts": 1,
     "parts_matched": 2,
-    "contracts_applied": 7,
+    "contracts_applied": 8,
     "coverage_percentage": 50,
     "enabled_contract_rules": [
       "supply_abs_max",
@@ -1077,10 +1077,6 @@
       "voltage_compatible",
       "current_budget",
       "no_i2c_address_conflict"
-    ],
-    "missing_warnings": [
-      "Missing contract data for R1 pin 1 on powered net /+3V3",
-      "Missing contract data for R2 pin 1 on powered net /+3V3"
     ]
   },
   "derived": {
