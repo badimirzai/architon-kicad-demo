@@ -1,0 +1,677 @@
+{
+  "graph_version": "1",
+  "rv_version": "v0.7.0-dev",
+  "input_path": ".",
+  "summary": {
+    "violations": 4,
+    "warnings": 0,
+    "infos": 0,
+    "findings": 4,
+    "has_failures": true,
+    "user_contracts_loaded": 0,
+    "built_in_contracts_loaded": 12,
+    "active_user_requirements": 0
+  },
+  "nodes": [
+    {
+      "id": "U1",
+      "ref": "U1",
+      "label": "U1 ESP32-WROOM-32",
+      "type": "mcu",
+      "contract_coverage": "partial",
+      "violations": 1,
+      "warnings": 0,
+      "finding_ids": [
+        "supply_abs_max"
+      ],
+      "nets": [
+        "/+5V",
+        "/GND",
+        "/I2C_SCL",
+        "/I2C_SDA",
+        "unconnected-(U1-EN-Pad3)",
+        "unconnected-(U1-IO0-Pad25)",
+        "unconnected-(U1-IO12-Pad14)",
+        "unconnected-(U1-IO13-Pad16)",
+        "unconnected-(U1-IO14-Pad13)",
+        "unconnected-(U1-IO15-Pad23)",
+        "unconnected-(U1-IO16-Pad27)",
+        "unconnected-(U1-IO17-Pad28)",
+        "unconnected-(U1-IO18-Pad30)",
+        "unconnected-(U1-IO19-Pad31)",
+        "unconnected-(U1-IO2-Pad24)",
+        "unconnected-(U1-IO23-Pad37)",
+        "unconnected-(U1-IO25-Pad10)",
+        "unconnected-(U1-IO26-Pad11)",
+        "unconnected-(U1-IO27-Pad12)",
+        "unconnected-(U1-IO32-Pad8)",
+        "unconnected-(U1-IO33-Pad9)",
+        "unconnected-(U1-IO34-Pad6)",
+        "unconnected-(U1-IO35-Pad7)",
+        "unconnected-(U1-IO4-Pad26)",
+        "unconnected-(U1-IO5-Pad29)",
+        "unconnected-(U1-NC-Pad32)",
+        "unconnected-(U1-RXD0{slash}IO3-Pad34)",
+        "unconnected-(U1-SCK{slash}CLK-Pad20)",
+        "unconnected-(U1-SCS{slash}CMD-Pad19)",
+        "unconnected-(U1-SDI{slash}SD1-Pad22)",
+        "unconnected-(U1-SDO{slash}SD0-Pad21)",
+        "unconnected-(U1-SENSOR_VN-Pad5)",
+        "unconnected-(U1-SENSOR_VP-Pad4)",
+        "unconnected-(U1-SHD{slash}SD2-Pad17)",
+        "unconnected-(U1-SWP{slash}SD3-Pad18)",
+        "unconnected-(U1-TXD0{slash}IO1-Pad35)"
+      ],
+      "metadata": {
+        "value": "ESP32-WROOM-32",
+        "footprint": "RF_Module:ESP32-WROOM-32",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "U2",
+      "ref": "U2",
+      "label": "U2 TB6612FNG",
+      "type": "motor_driver",
+      "contract_coverage": "partial",
+      "violations": 3,
+      "warnings": 0,
+      "finding_ids": [
+        "motor_driver_vm_range_01",
+        "motor_driver_vm_range_02",
+        "motor_driver_vm_range_03"
+      ],
+      "nets": [
+        "/+3V3",
+        "/3V3",
+        "/GND",
+        "Net-(U2-AO1-Pad1)",
+        "Net-(U2-AO2-Pad5)",
+        "Net-(U2-BO1-Pad11)",
+        "Net-(U2-BO2-Pad7)",
+        "Net-(U2-PGND1-Pad3)",
+        "Net-(U2-PGND2-Pad10)",
+        "unconnected-(U2-AIN1-Pad21)",
+        "unconnected-(U2-AIN2-Pad22)",
+        "unconnected-(U2-BIN1-Pad17)",
+        "unconnected-(U2-BIN2-Pad16)",
+        "unconnected-(U2-PWMA-Pad23)",
+        "unconnected-(U2-PWMB-Pad15)",
+        "unconnected-(U2-STBY-Pad19)"
+      ],
+      "metadata": {
+        "value": "TB6612FNG",
+        "footprint": "Package_SO:SSOP-24_5.3x8.2mm_P0.65mm",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "U3",
+      "ref": "U3",
+      "label": "U3 LSM9DS1",
+      "type": "sensor",
+      "contract_coverage": "missing",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/3V3",
+        "/GND",
+        "/I2C_SCL",
+        "/I2C_SDA",
+        "Net-(U3-VDDIO-Pad1)",
+        "unconnected-(U3-C1-Pad24)",
+        "unconnected-(U3-CAP-Pad21)",
+        "unconnected-(U3-CS_A{slash}G-Pad7)",
+        "unconnected-(U3-CS_M-Pad8)",
+        "unconnected-(U3-DEN_A{slash}G-Pad13)",
+        "unconnected-(U3-DRDY_M-Pad9)",
+        "unconnected-(U3-INT1_A{slash}G-Pad11)",
+        "unconnected-(U3-INT2_A{slash}G-Pad12)",
+        "unconnected-(U3-INT_M-Pad10)",
+        "unconnected-(U3-RES-Pad14)",
+        "unconnected-(U3-RES-Pad15)",
+        "unconnected-(U3-RES-Pad16)",
+        "unconnected-(U3-RES-Pad17)",
+        "unconnected-(U3-RES-Pad18)",
+        "unconnected-(U3-SDO_A{slash}G-Pad5)",
+        "unconnected-(U3-SDO_M-Pad6)"
+      ],
+      "metadata": {
+        "value": "LSM9DS1",
+        "footprint": "Package_LGA:LGA-24L_3x3.5mm_P0.43mm",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "U4",
+      "ref": "U4",
+      "label": "U4 AMS1117-3.3",
+      "type": "regulator",
+      "contract_coverage": "full",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/+3V3",
+        "/+5V",
+        "/GND"
+      ],
+      "metadata": {
+        "value": "AMS1117-3.3",
+        "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    },
+    {
+      "id": "U5",
+      "ref": "U5",
+      "label": "U5 MPU-6050",
+      "type": "sensor",
+      "contract_coverage": "partial",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": [],
+      "nets": [
+        "/3V3",
+        "/GND",
+        "/I2C_SCL",
+        "/I2C_SDA",
+        "unconnected-(U5-AD0-Pad9)",
+        "unconnected-(U5-AUX_CL-Pad7)",
+        "unconnected-(U5-AUX_DA-Pad6)",
+        "unconnected-(U5-CLKIN-Pad1)",
+        "unconnected-(U5-CPOUT-Pad20)",
+        "unconnected-(U5-FSYNC-Pad11)",
+        "unconnected-(U5-INT-Pad12)",
+        "unconnected-(U5-NC-Pad14)",
+        "unconnected-(U5-NC-Pad15)",
+        "unconnected-(U5-NC-Pad16)",
+        "unconnected-(U5-NC-Pad17)",
+        "unconnected-(U5-NC-Pad2)",
+        "unconnected-(U5-NC-Pad3)",
+        "unconnected-(U5-NC-Pad4)",
+        "unconnected-(U5-NC-Pad5)",
+        "unconnected-(U5-REGOUT-Pad10)",
+        "unconnected-(U5-RESV-Pad19)",
+        "unconnected-(U5-RESV-Pad21)",
+        "unconnected-(U5-RESV-Pad22)",
+        "unconnected-(U5-VLOGIC-Pad8)"
+      ],
+      "metadata": {
+        "value": "MPU-6050",
+        "footprint": "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm",
+        "mpn": "",
+        "manufacturer": ""
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_U1_U2_GND",
+      "source": "U1",
+      "target": "U2",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U3_GND",
+      "source": "U1",
+      "target": "U3",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U3_I2C_SCL",
+      "source": "U1",
+      "target": "U3",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U3_I2C_SDA",
+      "source": "U1",
+      "target": "U3",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U4_5V",
+      "source": "U1",
+      "target": "U4",
+      "net": "/+5V",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+5V",
+      "voltage_v": 5,
+      "violations": 1,
+      "warnings": 0,
+      "finding_ids": [
+        "supply_abs_max"
+      ]
+    },
+    {
+      "id": "edge_U1_U4_GND",
+      "source": "U1",
+      "target": "U4",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U5_GND",
+      "source": "U1",
+      "target": "U5",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U5_I2C_SCL",
+      "source": "U1",
+      "target": "U5",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U1_U5_I2C_SDA",
+      "source": "U1",
+      "target": "U5",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U2_U3_3V3",
+      "source": "U2",
+      "target": "U3",
+      "net": "/3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/3V3",
+      "voltage_v": 3.3,
+      "violations": 2,
+      "warnings": 0,
+      "finding_ids": [
+        "motor_driver_vm_range_01",
+        "motor_driver_vm_range_02"
+      ]
+    },
+    {
+      "id": "edge_U2_U3_GND",
+      "source": "U2",
+      "target": "U3",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U2_U4_3V3",
+      "source": "U2",
+      "target": "U4",
+      "net": "/+3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/+3V3",
+      "voltage_v": 3.3,
+      "violations": 1,
+      "warnings": 0,
+      "finding_ids": [
+        "motor_driver_vm_range_03"
+      ]
+    },
+    {
+      "id": "edge_U2_U4_GND",
+      "source": "U2",
+      "target": "U4",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U2_U5_3V3",
+      "source": "U2",
+      "target": "U5",
+      "net": "/3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/3V3",
+      "voltage_v": 3.3,
+      "violations": 2,
+      "warnings": 0,
+      "finding_ids": [
+        "motor_driver_vm_range_01",
+        "motor_driver_vm_range_02"
+      ]
+    },
+    {
+      "id": "edge_U2_U5_GND",
+      "source": "U2",
+      "target": "U5",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U3_U4_GND",
+      "source": "U3",
+      "target": "U4",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U3_U5_3V3",
+      "source": "U3",
+      "target": "U5",
+      "net": "/3V3",
+      "type": "power",
+      "domain": "power",
+      "interface": "/3V3",
+      "voltage_v": 3.3,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U3_U5_GND",
+      "source": "U3",
+      "target": "U5",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U3_U5_I2C_SCL",
+      "source": "U3",
+      "target": "U5",
+      "net": "/I2C_SCL",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U3_U5_I2C_SDA",
+      "source": "U3",
+      "target": "U5",
+      "net": "/I2C_SDA",
+      "type": "i2c",
+      "domain": "data",
+      "interface": "I2C_1",
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    },
+    {
+      "id": "edge_U4_U5_GND",
+      "source": "U4",
+      "target": "U5",
+      "net": "/GND",
+      "type": "power",
+      "domain": "power",
+      "interface": "/GND",
+      "voltage_v": 0,
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "rails": [
+    {
+      "name": "/+3V3",
+      "voltage_v": 3.3,
+      "source_ref": "U4",
+      "consumers": [
+        "U2"
+      ],
+      "violations": 1,
+      "warnings": 0,
+      "finding_ids": [
+        "motor_driver_vm_range_03"
+      ]
+    },
+    {
+      "name": "/+5V",
+      "voltage_v": 5,
+      "source_ref": "",
+      "consumers": [
+        "U1",
+        "U4"
+      ],
+      "violations": 1,
+      "warnings": 0,
+      "finding_ids": [
+        "supply_abs_max"
+      ]
+    },
+    {
+      "name": "/3V3",
+      "voltage_v": 3.3,
+      "source_ref": "",
+      "consumers": [
+        "U2",
+        "U3",
+        "U5"
+      ],
+      "violations": 2,
+      "warnings": 0,
+      "finding_ids": [
+        "motor_driver_vm_range_01",
+        "motor_driver_vm_range_02"
+      ]
+    },
+    {
+      "name": "/GND",
+      "voltage_v": 0,
+      "source_ref": "",
+      "consumers": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5"
+      ],
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "I2C_1",
+      "type": "i2c",
+      "nets": [
+        "/I2C_SCL",
+        "/I2C_SDA"
+      ],
+      "participants": [
+        "U1",
+        "U3",
+        "U5"
+      ],
+      "pullups": [],
+      "violations": 0,
+      "warnings": 0,
+      "finding_ids": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "motor_driver_vm_range_01",
+      "rule_id": "motor_driver_vm_range",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "severity": "ERROR",
+      "message": "U2 motor supply pin 13 on net /3V3 sees 3.30V below VM limit 4.50V",
+      "component_ref": "U2",
+      "net": "/3V3",
+      "pin": "13",
+      "requirement": "motor_driver_vm_range",
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "provenance": "source=built-in; source_id=TB6612FNG; detail=curated Architon v0.3.1 built-in contract"
+    },
+    {
+      "id": "motor_driver_vm_range_02",
+      "rule_id": "motor_driver_vm_range",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "severity": "ERROR",
+      "message": "U2 motor supply pin 14 on net /3V3 sees 3.30V below VM limit 4.50V",
+      "component_ref": "U2",
+      "net": "/3V3",
+      "pin": "14",
+      "requirement": "motor_driver_vm_range",
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "provenance": "source=built-in; source_id=TB6612FNG; detail=curated Architon v0.3.1 built-in contract"
+    },
+    {
+      "id": "motor_driver_vm_range_03",
+      "rule_id": "motor_driver_vm_range",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "severity": "ERROR",
+      "message": "U2 motor supply pin 24 on net /+3V3 sees 3.30V below VM limit 4.50V",
+      "component_ref": "U2",
+      "net": "/+3V3",
+      "pin": "24",
+      "requirement": "motor_driver_vm_range",
+      "fix": "Use a motor supply rail inside the motor driver's VM range.",
+      "provenance": "source=built-in; source_id=TB6612FNG; detail=curated Architon v0.3.1 built-in contract"
+    },
+    {
+      "id": "supply_abs_max",
+      "rule_id": "supply_abs_max",
+      "contract_id": "ESP32-WROOM-32",
+      "contract_source": "built_in",
+      "severity": "ERROR",
+      "message": "U1 pin 2 on net /+5V sees 5.00V above absolute maximum 3.60V",
+      "component_ref": "U1",
+      "net": "/+5V",
+      "pin": "2",
+      "requirement": "supply_abs_max",
+      "fix": "Move the component to a rail within its absolute maximum voltage.",
+      "provenance": "source=built-in; source_id=ESP32-WROOM-32; detail=curated Architon v0.3.1 built-in contract"
+    }
+  ],
+  "findings_index": {
+    "motor_driver_vm_range_01": {
+      "node_ids": [
+        "U2"
+      ],
+      "edge_ids": [
+        "edge_U2_U3_3V3",
+        "edge_U2_U5_3V3"
+      ],
+      "rail_names": [
+        "/3V3"
+      ]
+    },
+    "motor_driver_vm_range_02": {
+      "node_ids": [
+        "U2"
+      ],
+      "edge_ids": [
+        "edge_U2_U3_3V3",
+        "edge_U2_U5_3V3"
+      ],
+      "rail_names": [
+        "/3V3"
+      ]
+    },
+    "motor_driver_vm_range_03": {
+      "node_ids": [
+        "U2"
+      ],
+      "edge_ids": [
+        "edge_U2_U4_3V3"
+      ],
+      "rail_names": [
+        "/+3V3"
+      ]
+    },
+    "supply_abs_max": {
+      "node_ids": [
+        "U1"
+      ],
+      "edge_ids": [
+        "edge_U1_U4_5V"
+      ],
+      "rail_names": [
+        "/+5V"
+      ]
+    }
+  }
+}

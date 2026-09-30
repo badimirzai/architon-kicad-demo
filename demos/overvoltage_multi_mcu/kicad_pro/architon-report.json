@@ -3,7 +3,7 @@
   "summary": {
     "source": "kicad_netlist_sexpr",
     "source_importer": "kicad",
-    "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1076836766.net",
+    "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/overvoltage_multi_mcu/kicad_pro/.architon/generated.net",
     "parts": 5,
     "pins": 114,
     "rules": 4,
@@ -14,6 +14,12 @@
     "parse_warnings": [],
     "nets": 88,
     "parts_matched": 4,
+    "user_contracts_loaded": 0,
+    "built_in_contracts_loaded": 12,
+    "active_user_requirements": 0,
+    "available_contract_rules": 13,
+    "requirements_enabled": 0,
+    "part_contract_coverage_percentage": 80,
     "contracts_applied": 11,
     "contract_coverage_percentage": 80,
     "unknown_power_critical_refs": [
@@ -24,7 +30,15 @@
       "supply_recommended_range",
       "gpio_abs_max",
       "motor_driver_vm_range",
-      "regulator_output_current"
+      "regulator_output_current",
+      "common_ground",
+      "pullup_ohms",
+      "voltage_compatible",
+      "current_budget",
+      "no_i2c_address_conflict",
+      "interface_component_missing",
+      "interface_net_missing",
+      "interface_not_connected"
     ]
   },
   "design_ir": {
@@ -33,8 +47,8 @@
     "source_info": {
       "importer": "kicad",
       "format": "netlist_sexpr",
-      "input": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1076836766.net",
-      "imported": "2026-05-05T15:14:53Z"
+      "input": "/Users/badimirzai/Documents/architon-kicad-demo/demos/overvoltage_multi_mcu/kicad_pro/.architon/generated.net",
+      "imported": "2026-09-27T12:11:31Z"
     },
     "parts": [
       {
@@ -1693,13 +1707,13 @@
       }
     ],
     "metadata": {
-      "input_file": "/var/folders/w2/yp482f0d42s_16xfhs11xcyh0000gn/T/architon-kicad-1076836766.net",
-      "parsed_at": "2026-05-05T15:14:53Z"
+      "input_file": "/Users/badimirzai/Documents/architon-kicad-demo/demos/overvoltage_multi_mcu/kicad_pro/.architon/generated.net",
+      "parsed_at": "2026-09-27T12:11:31Z"
     }
   },
-  "rules": [
+  "findings": [
     {
-      "id": "motor_driver_vm_range",
+      "id": "motor_driver_vm_range_01",
       "rule_id": "motor_driver_vm_range",
       "severity": "ERROR",
       "net": "/3V3",
@@ -1708,6 +1722,9 @@
       "component_ref": "U2",
       "pin": "13",
       "source": "built-in",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "requirement": "motor_driver_vm_range",
       "provenance": {
         "source": "built-in",
         "source_id": "TB6612FNG",
@@ -1723,7 +1740,7 @@
       }
     },
     {
-      "id": "motor_driver_vm_range",
+      "id": "motor_driver_vm_range_02",
       "rule_id": "motor_driver_vm_range",
       "severity": "ERROR",
       "net": "/3V3",
@@ -1732,6 +1749,9 @@
       "component_ref": "U2",
       "pin": "14",
       "source": "built-in",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "requirement": "motor_driver_vm_range",
       "provenance": {
         "source": "built-in",
         "source_id": "TB6612FNG",
@@ -1747,7 +1767,7 @@
       }
     },
     {
-      "id": "motor_driver_vm_range",
+      "id": "motor_driver_vm_range_03",
       "rule_id": "motor_driver_vm_range",
       "severity": "ERROR",
       "net": "/+3V3",
@@ -1756,6 +1776,9 @@
       "component_ref": "U2",
       "pin": "24",
       "source": "built-in",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "requirement": "motor_driver_vm_range",
       "provenance": {
         "source": "built-in",
         "source_id": "TB6612FNG",
@@ -1780,6 +1803,9 @@
       "component_ref": "U1",
       "pin": "2",
       "source": "built-in",
+      "contract_id": "ESP32-WROOM-32",
+      "contract_source": "built_in",
+      "requirement": "supply_abs_max",
       "provenance": {
         "source": "built-in",
         "source_id": "ESP32-WROOM-32",
@@ -1795,9 +1821,9 @@
       }
     }
   ],
-  "findings": [
+  "rules": [
     {
-      "id": "motor_driver_vm_range",
+      "id": "motor_driver_vm_range_01",
       "rule_id": "motor_driver_vm_range",
       "severity": "ERROR",
       "net": "/3V3",
@@ -1806,6 +1832,9 @@
       "component_ref": "U2",
       "pin": "13",
       "source": "built-in",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "requirement": "motor_driver_vm_range",
       "provenance": {
         "source": "built-in",
         "source_id": "TB6612FNG",
@@ -1821,7 +1850,7 @@
       }
     },
     {
-      "id": "motor_driver_vm_range",
+      "id": "motor_driver_vm_range_02",
       "rule_id": "motor_driver_vm_range",
       "severity": "ERROR",
       "net": "/3V3",
@@ -1830,6 +1859,9 @@
       "component_ref": "U2",
       "pin": "14",
       "source": "built-in",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "requirement": "motor_driver_vm_range",
       "provenance": {
         "source": "built-in",
         "source_id": "TB6612FNG",
@@ -1845,7 +1877,7 @@
       }
     },
     {
-      "id": "motor_driver_vm_range",
+      "id": "motor_driver_vm_range_03",
       "rule_id": "motor_driver_vm_range",
       "severity": "ERROR",
       "net": "/+3V3",
@@ -1854,6 +1886,9 @@
       "component_ref": "U2",
       "pin": "24",
       "source": "built-in",
+      "contract_id": "TB6612FNG",
+      "contract_source": "built_in",
+      "requirement": "motor_driver_vm_range",
       "provenance": {
         "source": "built-in",
         "source_id": "TB6612FNG",
@@ -1878,6 +1913,9 @@
       "component_ref": "U1",
       "pin": "2",
       "source": "built-in",
+      "contract_id": "ESP32-WROOM-32",
+      "contract_source": "built_in",
+      "requirement": "supply_abs_max",
       "provenance": {
         "source": "built-in",
         "source_id": "ESP32-WROOM-32",
@@ -1911,7 +1949,15 @@
       "supply_recommended_range",
       "gpio_abs_max",
       "motor_driver_vm_range",
-      "regulator_output_current"
+      "regulator_output_current",
+      "common_ground",
+      "pullup_ohms",
+      "voltage_compatible",
+      "current_budget",
+      "no_i2c_address_conflict",
+      "interface_component_missing",
+      "interface_net_missing",
+      "interface_not_connected"
     ],
     "missing_warnings": [
       "Missing contract data for U3 pin 22 on powered net /3V3",
